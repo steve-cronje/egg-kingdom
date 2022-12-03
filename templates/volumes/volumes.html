@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container page-container">
+    <div class="row volumes-row">
+        <div class="col-3">
+            <div class="card hvr-bob">
+                <div class="card-header text-center">
+                    Volume 1
+                </div>
+                <a href="{% url 'volume' 1 %}"><img src="{% static 'img/volumes/volume1.png' %}" class="hvr-bob"></a>
+            </div>
+        </div>
+        <div class="col-3">
+            <div class="card hvr-bob">
+                <div class="card-header text-center">
+                    Volume 2
+                </div>
+                <a href="{% url 'volume' 2 %}"><img src="{% static 'img/volumes/volume2.png' %}" class="hvr-bob"></a>
+            </div>
+        </div>
+        <div class="col-3">
+            <div class="card hvr-bob">
+                <div class="card-header text-center">
+                    Volume 3
+                </div>
+                <a href="{% url 'volume' 3 %}"><img src="{% static 'img/volumes/volume3.png' %}" class="hvr-bob"></a>
+            </div>
+        </div>
+        <div class="col-3">
+            <div class="card hvr-bob">
+                <div class="card-header text-center">
+                    Volume 4
+                </div>
+                <a href="{% url 'volume' 4 %}"><img src="{% static 'img/volumes/volume4.png' %}" class="hvr-bob"></a>
+            </div>
+        </div>
+    </div>
+    <div class="row g-0">
+        <div class="col-12 volumes-folder text-center">
+            <h3 class="display-3">Meme Volumes</h3>
+        </div>
+    </div>
+</div>
+{% endblock %}

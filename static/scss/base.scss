@@ -1,0 +1,204 @@
+$offcanvas-horizontal-width: 250px;
+$prefix: bs-;
+$color-darkgrey: "#2f323a";
+$color-red: "#a4303f";
+$color-yolkyellow: "#e8a12f";
+$color-lightwhite: "#ddf8e8";
+$color-lightwhite-o: rgba(255, 255, 255, 0.5);
+$color-lightsilver: "#87919e";
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;900&family=Oswald:wght@600&family=Rubik:wght@300;400;500;700&family=Ubuntu:wght@400;700&display=swap');
+
+body {
+    background-color: #{$color-darkgrey};
+    font-family: 'Rubik', sans-serif;
+}
+
+@keyframes title-bob {
+    0% {
+        top: 0px;
+    }
+
+    25% {
+        top: 8px;
+    }
+
+    50% {
+        top: 0px;
+    }
+
+    75% {
+        top: -8px;
+    }
+
+    100% {
+        top: 0px;
+    }
+}
+
+#base-container {
+    width: 1000px;
+
+    .title-container {
+        text-align: center;
+        margin-bottom: 1.5%;
+
+        .base-title {
+            position: relative;
+            color: #{$color-lightwhite};
+            animation-name: 'title-bob';
+            animation-duration: 6s;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+        }
+    }
+}
+
+$speed: 0.25s;
+
+.btn-flip {
+    opacity: 1;
+    outline: 0;
+    color: #fff;
+    line-height: 40px;
+    position: relative;
+    text-align: center;
+    letter-spacing: 1px;
+    display: inline-block;
+    text-decoration: none;
+    font-weight: 700;
+    text-transform: uppercase;
+
+    &:hover {
+
+        &:after {
+            opacity: 1;
+            transform: translateY(0) rotateX(0);
+        }
+
+        &:before {
+            opacity: 0;
+            transform: translateY(50%) rotateX(90deg);
+        }
+    }
+
+    &:after {
+        top: 0;
+        left: 0;
+        opacity: 0;
+        width: 100%;
+        color: #{$color-lightwhite};
+        display: block;
+        transition: $speed;
+        position: absolute;
+        background-image: linear-gradient(#{to left, #{$color-yolkyellow}, #{$color-red}, #{$color-yolkyellow}
+        });
+    content: attr(data-back);
+    transform: translateY(-50%) rotateX(90deg);
+}
+
+&:before {
+    top: 0;
+    left: 0;
+    opacity: 1;
+    color: #adadaf;
+    display: block;
+    padding: 0 30px;
+    line-height: 40px;
+    transition: $speed;
+    position: relative;
+    background: #323237;
+    content: attr(data-front);
+    transform: translateY(0) rotateX(0);
+}
+}
+
+.navbar {
+    .navbar-brand {
+        border-style: none;
+    }
+
+}
+
+.offcanvas {
+    --#{$prefix}offcanvas-width: #{$offcanvas-horizontal-width};
+    --#{$prefix}offcanvas-padding-x: 10%;
+    background-image: linear-gradient(to bottom, #{$color-yolkyellow}, #{$color-red});
+
+    #offcanvasCloseBtn {
+        border-radius: 0%;
+    }
+
+    .offcanvas-title {
+        font-weight: 700;
+    }
+}
+
+.page-container {
+    padding-top: 2%;
+}
+
+.card {
+    border-width: 0;
+    border-radius: 0%;
+}
+
+.col-3 {
+    border-radius: 0;
+
+    .card-header {
+        background-image: linear-gradient(#{to right, #{$color-yolkyellow}, #{$color-red}});
+        border-radius: 0%;
+    }
+}
+
+.col-9 {
+    .card-header {
+        background-image: linear-gradient(#{to left, #{$color-yolkyellow}, #{$color-red}});
+        border-radius: 0%;
+    }
+}
+
+.volume-header {
+    h3 {
+        // color: #{$color-lightwhite};
+        color: #{$color-lightwhite};
+    }
+    a {
+        color: #{$color-lightwhite};
+    }
+    padding-bottom: 2%;
+}
+
+.volumes-row {
+    margin-bottom: -40%;
+    img {
+        width: 100%;
+    }
+    .card-header {
+        color: #{$color-lightwhite};
+    }
+    .card {
+        overflow: hidden;
+        height: 40%;
+    }
+}
+
+.volumes-folder {
+    padding-top: 2%;
+    z-index: 999;
+    background-image: linear-gradient(#{to left, #{$color-yolkyellow}, #{$color-red}, #{$color-yolkyellow}});
+    color: #{$color-lightwhite};
+    padding-bottom: 2%;
+}
+
+.img-container {
+    img {
+        width: 100%;
+    }
+}
+
+.img-base {
+    background-image: linear-gradient(#{to right, #{$color-yolkyellow}, #{$color-red}});
+    padding-top: 2%;
+}

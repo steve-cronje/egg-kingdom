@@ -1,0 +1,168 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;900&family=Oswald:wght@600&family=Rubik:wght@300;400;500;700&family=Ubuntu:wght@400;700&display=swap");
+body {
+  background-color: #2f323a;
+  font-family: "Rubik", sans-serif;
+}
+
+@keyframes title-bob {
+  0% {
+    top: 0px;
+  }
+  25% {
+    top: 8px;
+  }
+  50% {
+    top: 0px;
+  }
+  75% {
+    top: -8px;
+  }
+  100% {
+    top: 0px;
+  }
+}
+#base-container {
+  width: 1000px;
+}
+#base-container .title-container {
+  text-align: center;
+  margin-bottom: 1.5%;
+}
+#base-container .title-container .base-title {
+  position: relative;
+  color: #ddf8e8;
+  animation-name: "title-bob";
+  animation-duration: 6s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+.btn-flip {
+  opacity: 1;
+  outline: 0;
+  color: #fff;
+  line-height: 40px;
+  position: relative;
+  text-align: center;
+  letter-spacing: 1px;
+  display: inline-block;
+  text-decoration: none;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+.btn-flip:hover:after {
+  opacity: 1;
+  transform: translateY(0) rotateX(0);
+}
+.btn-flip:hover:before {
+  opacity: 0;
+  transform: translateY(50%) rotateX(90deg);
+}
+.btn-flip:after {
+  top: 0;
+  left: 0;
+  opacity: 0;
+  width: 100%;
+  color: #ddf8e8;
+  display: block;
+  transition: 0.25s;
+  position: absolute;
+  background-image: linear-gradient(to left, #e8a12f, #a4303f, #e8a12f);
+  content: attr(data-back);
+  transform: translateY(-50%) rotateX(90deg);
+}
+.btn-flip:before {
+  top: 0;
+  left: 0;
+  opacity: 1;
+  color: #adadaf;
+  display: block;
+  padding: 0 30px;
+  line-height: 40px;
+  transition: 0.25s;
+  position: relative;
+  background: #323237;
+  content: attr(data-front);
+  transform: translateY(0) rotateX(0);
+}
+
+.navbar .navbar-brand {
+  border-style: none;
+}
+
+.offcanvas {
+  --bs-offcanvas-width: 250px;
+  --bs-offcanvas-padding-x: 10%;
+  background-image: linear-gradient(to bottom, #e8a12f, #a4303f);
+}
+.offcanvas #offcanvasCloseBtn {
+  border-radius: 0%;
+}
+.offcanvas .offcanvas-title {
+  font-weight: 700;
+}
+
+.page-container {
+  padding-top: 2%;
+}
+
+.card {
+  border-width: 0;
+  border-radius: 0%;
+}
+
+.col-3 {
+  border-radius: 0;
+}
+.col-3 .card-header {
+  background-image: linear-gradient(to right, #e8a12f, #a4303f);
+  border-radius: 0%;
+}
+
+.col-9 .card-header {
+  background-image: linear-gradient(to left, #e8a12f, #a4303f);
+  border-radius: 0%;
+}
+
+.volume-header {
+  padding-bottom: 2%;
+}
+.volume-header h3 {
+  color: #ddf8e8;
+}
+.volume-header a {
+  color: #ddf8e8;
+}
+
+.volumes-row {
+  margin-bottom: -40%;
+}
+.volumes-row img {
+  width: 100%;
+}
+.volumes-row .card-header {
+  color: #ddf8e8;
+}
+.volumes-row .card {
+  overflow: hidden;
+  height: 40%;
+}
+
+.volumes-folder {
+  padding-top: 2%;
+  z-index: 999;
+  background-image: linear-gradient(to left, #e8a12f, #a4303f, #e8a12f);
+  color: #ddf8e8;
+  padding-bottom: 2%;
+}
+
+.img-container img {
+  width: 100%;
+}
+
+.img-base {
+  background-image: linear-gradient(to right, #e8a12f, #a4303f);
+  padding-top: 2%;
+}
+
+/*# sourceMappingURL=base.css.map */
