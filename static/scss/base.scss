@@ -202,3 +202,7 @@ $speed: 0.25s;
     background-image: linear-gradient(#{to right, #{$color-yolkyellow}, #{$color-red}});
     padding-top: 2%;
 }
+
+.changelog-card {
+    height: 300px;
+}
