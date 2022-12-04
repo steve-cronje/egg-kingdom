@@ -28,6 +28,7 @@ def get_user_playlist():
             artist_names = ''
             for x in artists:
                 artist_names += x['name']+', '
+            artist_names = artist_names[:(len(artist_names)-2):]
         else:
             artist_names = artists[0]['name']
         album = ''
