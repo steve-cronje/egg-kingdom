@@ -1,4 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;900&family=Oswald:wght@600&family=Rubik:wght@300;400;500;700&family=Ubuntu:wght@400;700&display=swap");
+:root {
+  scrollbar-width: thin !important;
+  scrollbar-color: #e8a12f #a4303f;
+}
+
 body {
   background-color: #2f323a;
   font-family: "Rubik", sans-serif;

@@ -1,5 +1,5 @@
 from django.urls import path
-from home.views import HomepageView, VolumesView, VolumeView, MusicShelvesView
+from main.views import HomepageView, VolumesView, VolumeView, MusicShelvesView
 
 
 urlpatterns = [

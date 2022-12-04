@@ -8,11 +8,28 @@ $color-lightwhite-o: rgba(255, 255, 255, 0.5);
 $color-lightsilver: "#87919e";
 
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;900&family=Oswald:wght@600&family=Rubik:wght@300;400;500;700&family=Ubuntu:wght@400;700&display=swap');
+:root {
+    scrollbar-width: thin !important;
+    scrollbar-color: #{$color-yolkyellow} #{$color-red};
+}
 
 body {
     background-color: #{$color-darkgrey};
     font-family: 'Rubik', sans-serif;
+    // ::-webkit-scrollbar {
+    //     width: 12px;
+    // }
+
+    // ::-webkit-scrollbar-track {
+    //     background: #{$color-yolkyellow}
+    // }
+
+    // ::-webkit-scrollbar-thumb {
+    //     background: #{$color-red}
+    // }
 }
+
+
 
 @keyframes title-bob {
     0% {
@@ -206,3 +223,4 @@ $speed: 0.25s;
 .changelog-card {
     height: 300px;
 }
+
