@@ -1,5 +1,6 @@
 from django.shortcuts import render
-from django.views.generic import TemplateView
+from django.views.generic import TemplateView, View
+from main import api
 
 class HomepageView(TemplateView):
     template_name = 'homebase/home.html'
@@ -29,5 +30,6 @@ class MusicShelvesView(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
+        # api.get_user_playlist()
+        context['my_playlist'] = api.get_user_playlist()
         return context
-
