@@ -158,15 +158,14 @@ $speed: 0.25s;
 .card {
     border-width: 0;
     border-radius: 0%;
-}
-
-.col-3 {
-    border-radius: 0;
-
     .card-header {
         background-image: linear-gradient(#{to right, #{$color-yolkyellow}, #{$color-red}});
         border-radius: 0%;
     }
+}
+
+.col-3 {
+    border-radius: 0;
 }
 
 .col-9 {
@@ -224,3 +223,14 @@ $speed: 0.25s;
     height: 300px;
 }
 
+audio {
+    background-image: linear-gradient(to right, #{$color-yolkyellow}, #{$color-red});
+}
+
+.music-card {
+    background-image: linear-gradient(to right, #{$color-yolkyellow}, #{$color-red});
+    img {
+        width: 100%;
+        
+    }
+}

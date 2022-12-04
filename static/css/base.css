@@ -115,13 +115,13 @@ body {
   border-width: 0;
   border-radius: 0%;
 }
+.card .card-header {
+  background-image: linear-gradient(to right, #e8a12f, #a4303f);
+  border-radius: 0%;
+}
 
 .col-3 {
   border-radius: 0;
-}
-.col-3 .card-header {
-  background-image: linear-gradient(to right, #e8a12f, #a4303f);
-  border-radius: 0%;
 }
 
 .col-9 .card-header {
@@ -172,6 +172,17 @@ body {
 
 .changelog-card {
   height: 300px;
+}
+
+audio {
+  background-image: linear-gradient(to right, #e8a12f, #a4303f);
+}
+
+.music-card {
+  background-image: linear-gradient(to right, #e8a12f, #a4303f);
+}
+.music-card img {
+  width: 100%;
 }
 
 /*# sourceMappingURL=base.css.map */
