@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container page-container">
+    <div class="row g-2 p-0">
+    {% for track in my_playlist %}
+        <div class="col-4 mb-4">
+            <div class="card music-card">
+                <div class="card-header text-center">
+                    <h6>{{ track.name }}</h6>
+                    <p>{{ track.artists }}</p>
+                </div>
+                <a href="{{ track.track_url }}" target="_blank" class="hvr-float"><img src='{{ track.image }}'></a>
+                
+                <audio controls>
+                    <source src="{{ track.preview_url }}" type="audio/mp3">
+                </audio> 
+            </div>
+        </div>
+    {% endfor %}
+    </div>
+    
+</div>
+{% endblock content %}

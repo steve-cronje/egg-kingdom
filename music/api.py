@@ -11,12 +11,12 @@ def print_spotipy():
     playlists = sp.user('mrpotato252')
     print(playlists)
 
-def get_user_playlist():
+def get_user_playlist_tracks(playlist_id):
     auth_manager = SpotifyClientCredentials(client_id=settings.SPOTIFY_CLIENT_ID, client_secret=settings.SPOTIFY_CLIENT_SECRET)
     sp = spotipy.Spotify(auth_manager=auth_manager)
 
     # user = sp.user('mrpotato252')
-    playlists = sp.user_playlist('mrpotato252', '3382J1fcy8RhhyA9LOoy84?si=a49c6dc16e6d4bb5')
+    playlists = sp.user_playlist('mrpotato252', playlist_id)
 
     playlist = []
     for item in playlists['tracks']['items']:
@@ -43,4 +43,20 @@ def get_user_playlist():
         playlist.append({'name': name, 'image': image, 'artists': artist_names, 'album': album, 'preview_url': preview_url, 'track_url': track_url})
     # print(playlist)
     return playlist
+
+def get_user_playlists_details():
+    auth_manager = SpotifyClientCredentials(client_id=settings.SPOTIFY_CLIENT_ID, client_secret=settings.SPOTIFY_CLIENT_SECRET)
+    sp = spotipy.Spotify(auth_manager=auth_manager)
+
+    playlists = []
+    for playlist_id in ['3382J1fcy8RhhyA9LOoy84', '2LUCK2ZsBfddsCabOqU9D9']:
+        playlist = sp.user_playlist('mrpotato252', playlist_id)
+        playlist_image = playlist['images'][0]['url']
+        playlist_name = playlist['name']
+        playlists.append({'name': playlist_name, 'image': playlist_image, 'id': playlist_id})
+    
+    return playlists
+    
+    # for item in playlist1:
+    
 

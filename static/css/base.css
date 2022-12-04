@@ -174,14 +174,23 @@ body {
   height: 300px;
 }
 
-audio {
-  background-image: linear-gradient(to right, #e8a12f, #a4303f);
-}
-
 .music-card {
   background-image: linear-gradient(to right, #e8a12f, #a4303f);
+  height: 100%;
 }
 .music-card img {
+  width: 100%;
+}
+.music-card audio {
+  background-image: linear-gradient(to right, #e8a12f, #a4303f);
+  margin-top: auto;
+}
+
+.playlist-card {
+  background-image: linear-gradient(to right, #e8a12f, #a4303f);
+  height: 100%;
+}
+.playlist-card img {
   width: 100%;
 }
 

@@ -223,14 +223,22 @@ $speed: 0.25s;
     height: 300px;
 }
 
-audio {
-    background-image: linear-gradient(to right, #{$color-yolkyellow}, #{$color-red});
-}
-
 .music-card {
     background-image: linear-gradient(to right, #{$color-yolkyellow}, #{$color-red});
     img {
         width: 100%;
-        
     }
+    height: 100%;
+    audio {
+        background-image: linear-gradient(to right, #{$color-yolkyellow}, #{$color-red});
+        margin-top:auto;
+    }
+}
+
+.playlist-card {
+    background-image: linear-gradient(to right, #{$color-yolkyellow}, #{$color-red});
+    img {
+        width: 100%;
+    }
+    height: 100%;
 }
