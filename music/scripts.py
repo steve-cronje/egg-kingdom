@@ -56,10 +56,20 @@ def pmwp(playlist_id):
     print('\n------- all tracks & albums saved! -------')
 
 
-def ue(playlist_id):
+def ue(playlist):
     auth_manager = SpotifyClientCredentials(client_id=settings.SPOTIFY_CLIENT_ID, client_secret=settings.SPOTIFY_CLIENT_SECRET)
     sp = spotipy.Spotify(auth_manager=auth_manager)
-    playlist = sp.user_playlist('mrpotato252', playlist_id)
-    for item in playlist['tracks']['items']:
-        Track.objects.get(id=item['track']['id']).explicit_content = bool(item['track']['explicit'])
-        print('explicit content boolean changed!')
+    playlist_spotify = sp.user_playlist('mrpotato252', playlist.id)
+    for item in playlist_spotify['tracks']['items']:
+        track = Track.objects.get(id=item['track']['id'])
+        track.explicit_content = item['track']['explicit']
+        track.playlist.add(playlist)
+        track.save()
+        print(f'{track.name} explicit content boolean changed to {item["track"]["explicit"]}, added to {playlist.name}')
+
+def gi(playlist):
+    auth_manager = SpotifyClientCredentials(client_id=settings.SPOTIFY_CLIENT_ID, client_secret=settings.SPOTIFY_CLIENT_SECRET)
+    sp = spotipy.Spotify(auth_manager=auth_manager)
+    playlist_spotify = sp.user_playlist('mrpotato252', playlist.id)
+    print(playlist_spotify['images'][0]['url'], playlist_spotify['images'][0]['width'])
+    print(playlist_spotify['images'][1]['url'], playlist_spotify['images'][1]['width'])

@@ -9,18 +9,22 @@
     </div>
     <div class="row mb-4">
         <div class="col-12 text-center playlist-header">
-            <a href="{{ my_playlist.2 }}" target='_blank' class="text-decoration-none display-6 hvr-grow">Link to this playlist</a>
+            <a href="{{ playlist_url }}" target='_blank' class="text-decoration-none display-6 hvr-grow">Link to this playlist</a>
         </div>
     </div>
     <div class="row g-2 p-0">
-    {% for track in my_playlist.0 %}
+    {% for track in my_playlist %}
         <div class="col-4 mb-4">
             <div class="card music-card">
                 <div class="card-header text-center">
                     <h6>{{ track.name }}</h6>
-                    <p>{{ track.artists }}</p>
+                        <p>
+                            {% for artist in track.artists.all %}
+                            {{ artist.name }},
+                            {% endfor %}
+                        </p>
                 </div>
-                <a href="{{ track.track_url }}" target="_blank" class="hvr-float"><img src='{{ track.image }}'></a>
+                <a href="{{ track.spotify_url }}" target="_blank" class="hvr-float"><img src='{{ track.album.image_url }}'></a>
                 
                 <audio controls>
                     <source src="{{ track.preview_url }}" type="audio/mpeg">

@@ -1,6 +1,16 @@
 from django.db import models
 import datetime
 
+class Playlist(models.Model):
+
+    id = models.CharField(max_length=255, primary_key=True)
+    name = models.CharField(max_length=100)
+    image_url = models.URLField(blank=True, null=True)
+    spotify_url = models.URLField(blank=True, null=True)
+
+    def __str__(self):
+        return self.name
+
 class Artist(models.Model):
 
     id = models.CharField(max_length=255, primary_key=True)
@@ -31,6 +41,7 @@ class Track(models.Model):
     name = models.CharField(max_length=100)
     album = models.ForeignKey(Album, on_delete=models.SET_NULL, null=True)
     artists = models.ManyToManyField(Artist)
+    playlist = models.ManyToManyField(Playlist)
     spotify_url = models.URLField(blank=True, null=True)
     preview_url = models.URLField(blank=True, null=True)
     explicit_content = models.BooleanField(default=False)
@@ -53,5 +64,4 @@ class Track(models.Model):
 
     def __str__(self):
         return self.name
-
 
