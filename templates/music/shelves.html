@@ -2,14 +2,19 @@
 
 {% block content %}
 <div class="container page-container">
-    <div class="row g-2 p-0">
+    <div class="row g-0">
+        <div class="col-12 playlists-header">
+            <h3 class="display-3 text-center mb-4">My Favourite Playlists</h3>
+        </div>
+    </div>
+    <div class="row gx-5 p-0">
         {% for playlist in playlists %}
         <div class="col-6">
-            <div class="card playlist-card">
+            <div class="card playlist-card hvr-float">
                 <div class="card-header text-center">
-                    {{ playlist.name }}
+                    <p class="display-5">{{ playlist.name }}</p>
                 </div>
-                <a href="{% url 'playlist' playlist.id %}"><img src="{{ playlist.image }}"></a>
+                <a href="{% url 'playlist' playlist.id %}" class="hvr-float"><img src="{{ playlist.image }}"></a>
             </div>
         </div>
         {% endfor %}

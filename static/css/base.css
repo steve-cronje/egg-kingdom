@@ -193,5 +193,16 @@ body {
 .playlist-card img {
   width: 100%;
 }
+.playlist-card p {
+  color: #ddf8e8;
+}
+
+.playlist-header a {
+  color: #ddf8e8;
+}
+
+.playlists-header {
+  color: #ddf8e8;
+}
 
 /*# sourceMappingURL=base.css.map */

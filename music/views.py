@@ -15,7 +15,7 @@ class MusicShelvesView(TemplateView):
         return context
 
 class MusicShelfView(TemplateView):
-    template_name = 'music/shelf.html'
+    template_name = 'music/playlist.html'
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)

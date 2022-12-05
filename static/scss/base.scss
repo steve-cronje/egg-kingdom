@@ -240,5 +240,18 @@ $speed: 0.25s;
     img {
         width: 100%;
     }
+    p {
+        color: #{$color-lightwhite};
+    }
     height: 100%;
+}
+
+.playlist-header {
+    a {
+        color: #{$color-lightwhite};
+    }
+}
+
+.playlists-header {
+    color: #{$color-lightwhite};
 }
