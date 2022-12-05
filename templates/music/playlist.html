@@ -26,9 +26,11 @@
                 </div>
                 <a href="{{ track.spotify_url }}" target="_blank" class="hvr-float"><img src='{{ track.album.image_url }}'></a>
                 
+                {% if track.preview_url %}
                 <audio controls>
                     <source src="{{ track.preview_url }}" type="audio/mpeg">
                 </audio> 
+                {% endif %}
             </div>
         </div>
     {% endfor %}
