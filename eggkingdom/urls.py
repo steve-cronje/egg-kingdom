@@ -22,5 +22,6 @@ urlpatterns = [
     path('', include('main.urls')),
     path('volumes/', include('volumes.urls')),
     path('music/', include('music.urls')),
+    path('games/', include('games.urls')),
     path('admin/', admin.site.urls),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) 

@@ -37,7 +37,7 @@ body {
     }
 
     25% {
-        top: 8px;
+        top: 6px;
     }
 
     50% {
@@ -45,7 +45,7 @@ body {
     }
 
     75% {
-        top: -8px;
+        top: -6px;
     }
 
     100% {
@@ -253,5 +253,9 @@ $speed: 0.25s;
 }
 
 .playlists-header {
+    color: #{$color-lightwhite};
+}
+
+footer {
     color: #{$color-lightwhite};
 }

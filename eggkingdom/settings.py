@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     'main.apps.MainConfig',
     'volumes.apps.VolumesConfig',
     'music.apps.MusicConfig',
+    'games.apps.GamesConfig',
 ]
 
 MIDDLEWARE = [

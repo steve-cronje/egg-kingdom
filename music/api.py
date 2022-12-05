@@ -52,9 +52,6 @@ def get_user_playlists_details():
         playlist_name = playlist['name']
         playlist_url = playlist['external_urls']
         playlists.append({'name': playlist_name, 'image': playlist_image, 'id': playlist_id, 'url': playlist_url['spotify']})
-    print(playlists)
+    # print(playlists)
     return playlists
-    
-    # for item in playlist1:
-    
 

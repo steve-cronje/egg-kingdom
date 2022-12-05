@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container page-containter">
+    <div class="row g-2 p-0">
+        {% for game in my_games %}
+        <div class="col-4">
+            <div class="card game-card">
+                <div class="card-header text-center">
+                    {{ game.name }}
+                </div>
+                <img src="{{ game.image_url }}">
+                <div class="card-footer text-center">
+                    <p>Published by {{ game.published_by }}, Developed by {{ game.developed_by }}</p>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock content %}
