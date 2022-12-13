@@ -8,6 +8,8 @@ django = "*"
 django-extensions = "*"
 django-environ = "*"
 spotipy = "*"
+pandas = "*"
+igdb-api-v4 = "*"
 
 [dev-packages]
 

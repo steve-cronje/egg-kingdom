@@ -50,6 +50,7 @@ INSTALLED_APPS = [
     'volumes.apps.VolumesConfig',
     'music.apps.MusicConfig',
     'games.apps.GamesConfig',
+    'books.apps.BooksConfig',
 ]
 
 MIDDLEWARE = [
@@ -147,3 +148,7 @@ PREPEND_WWW = False
 
 SPOTIFY_CLIENT_ID = env('SPOTIFY_CLIENT_ID')
 SPOTIFY_CLIENT_SECRET = env('SPOTIFY_CLIENT_SECRET')
+
+TWITCH_IGDB_CLIENT_ID = env('TWITCH_IGDB_CLIENT_ID')
+TWITCH_IGDB_CLIENT_SECRET = env('TWITCH_IGDB_CLIENT_SECRET')
+TWITCH_IGDB_AUTH_TOKEN = env('TWITCH_IGDB_AUTH_TOKEN')

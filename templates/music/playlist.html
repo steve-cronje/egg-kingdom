@@ -9,20 +9,34 @@
     </div>
     <div class="row mb-4">
         <div class="col-12 text-center playlist-header">
-            <a href="{{ playlist_url }}" target='_blank' class="text-decoration-none display-6 hvr-grow">Link to this playlist</a>
+            <a href="{{ my_playlist.spotify_url }}" target='_blank' class="text-decoration-none display-6 hvr-grow">Link to this playlist</a>
+        </div>
+    </div>
+    <div class="row mb-4">
+        <div class="col-12 text-center playlist-header">
+            <a href="{% url 'update-playlist' my_playlist.id %}" class="text-decoration-none hvr-grow">Update this playlist...</a>
         </div>
     </div>
     <div class="row g-2 p-0">
-    {% for track in my_playlist %}
+    {% for track in my_playlist.track_set.all %}
         <div class="col-4 mb-4">
             <div class="card music-card">
                 <div class="card-header text-center">
                     <h6>{{ track.name }}</h6>
-                        <p>
-                            {% for artist in track.artists.all %}
+                    <p>
+                    {% for artist in track.artists.all %}
+                        {% if forloop.last %}
+                            {{ artist.name }}
+                        {% else %}
                             {{ artist.name }},
-                            {% endfor %}
-                        </p>
+                        {% endif %}
+                    {% endfor %}
+                    {% if track.explicit_content %}
+                    <span class="badge bg-secondary">   E</span>
+                    {% endif %}
+                    </p>
+                    
+
                 </div>
                 <a href="{{ track.spotify_url }}" target="_blank" class="hvr-float"><img src='{{ track.album.image_url }}'></a>
                 

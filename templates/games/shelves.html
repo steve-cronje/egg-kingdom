@@ -4,18 +4,27 @@
 <div class="container page-containter">
     <div class="row g-2 p-0">
         {% for game in my_games %}
-        <div class="col-4">
-            <div class="card game-card">
-                <div class="card-header text-center">
+        <div class="col-2">
+            <a class="card game-card text-decoration-none" href="{% url 'game-display' game.pk %}">
+                <!-- <div class="card-header text-center">
                     {{ game.name }}
-                </div>
-                <img src="{{ game.image_url }}">
+                </div> -->
+                <img src="{{ game.cover_url }}" class="hvr-bounce-in">
                 <div class="card-footer text-center">
-                    <p>Published by {{ game.published_by }}, Developed by {{ game.developed_by }}</p>
+                    {% if game.release_date %}
+                    {{ game.release_date }}
+                    {% else %}
+                    TBA
+                    {% endif %}
                 </div>
-            </div>
+            </a>
         </div>
         {% endfor %}
+    </div>
+    <div class="row g-2 p-0 mt-4">
+        <div class="col-12 text-center">
+            <a href="{% url 'games-apicall' %}" class="btn btn-primary">Call Api?</a>
+        </div>
     </div>
 </div>
 {% endblock content %}

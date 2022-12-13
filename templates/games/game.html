@@ -1,0 +1,75 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container page-container">
+    <div class="row g-2 pb-4 text-center">
+        <a href="{% url 'games-shelves' %}" class="display-6 mb-4 text-light text-decoration-none games-shelf-link hvr-grow">Back to shelf</a>
+    </div>
+    <div class="row g-2 pb-2">
+        <div class="col-12">
+            <div class="card game-display-card">
+                <div class="card-header text-center">
+                    <h3 class="display-3">{{ game.name }}</h3>
+                    {% if game.release_date %}
+                    <p>{{ game.release_date }}</p>
+                    {% else %}
+                    <p>TBA</p>
+                    {% endif %}
+                </div>
+                <div id="carouselExampleIndicators" class="carousel slide carousel-fade" data-bs-ride="true">
+                    <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                        {% for screenshot in game.screenshot_set.all|slice:"1:" %}
+                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="{{ forloop.counter }}" aria-label="Slide {{ forloop.counter }}"></button>
+                        {% endfor %}
+                    </div>
+                    <div class="carousel-inner">
+                        <div class="carousel-item active" data-bs-interval="6000">
+                            <img src="{{ game.screenshot_set.first.url }}" class="d-block w-100" alt="...">
+                        </div>
+                        {% for screenshot in game.screenshot_set.all|slice:"1:" %}
+                        <div class="carousel-item" data-bs-interval="6000">
+                            <img src="{{ screenshot.url }}" class="d-block w-100" alt="#">
+                        </div>
+                        {% endfor %}
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Next</span>
+                    </button>
+                  </div>
+            </div>
+        </div>
+    </div>
+    <div class="row g-2 pt-2">
+        <div class="col-12">
+            <div class="card game-text-card">
+                <div class="card-header text-center">
+                    <h3 class="card-title">
+                    {% if game.my_description %}
+                        {{ game.my_description }}
+                        {% else %}
+                        ¯\_(ツ)_/¯
+                    {% endif %}
+                    </h3>
+                </div>
+                <div class="card-body text-center">
+                    <h5 class="text-lg">
+                        {% if game.game_bio %}
+                        {{ game.game_bio }}
+                        {% else %}
+                        ¯\_(ツ)_/¯
+                        {% endif %}
+                    </h5>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}

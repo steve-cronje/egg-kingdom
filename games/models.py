@@ -1,5 +1,6 @@
 from django.db import models
 
+
 class Genre(models.Model):
 
     genre = models.CharField(max_length=100)
@@ -8,34 +9,33 @@ class Genre(models.Model):
         return self.genre
 
 
-class Publisher(models.Model):
+class Company(models.Model):
 
     name = models.CharField(max_length=255)
 
     def __str__(self):
         return self.name
-
-
-class Developer(models.Model):
-    
-    name = models.CharField(max_length=255)
-
-    def __str__(self):
-        return self.name
-
 
 class Game(models.Model):
-
+    
+    id = models.IntegerField(primary_key=True)
     name = models.CharField(max_length=100)
-    game_bio = models.TextField(max_length=1000, blank=True)
+    game_bio = models.TextField(max_length=1000, blank=True, null=True)
     my_description = models.TextField(max_length=2000, null=True, blank=True)
     genre = models.ManyToManyField(Genre)
     favourite = models.BooleanField(default=False)
-    release_date = models.DateField(blank=True)
-    published_by = models.ForeignKey(Publisher, on_delete=models.SET_NULL, null=True)
-    developed_by = models.ForeignKey(Developer, on_delete=models.SET_NULL, null=True)
-    image_url = models.URLField(blank=True)
+    release_date = models.DateField(blank=True, null=True)
+    companies = models.ManyToManyField(Company)
+    cover_url = models.URLField(blank=True, null=True)
 
     def __str__(self):
         return self.name
         
+class Screenshot(models.Model):
+
+    id = models.IntegerField(primary_key=True)
+    url = models.URLField(blank=True, null=True)
+    game = models.ForeignKey(Game, on_delete=models.CASCADE, null=True, blank=True)
+
+    def __str__(self):
+        return self.game.name + " : " + self.url

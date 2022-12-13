@@ -9,6 +9,26 @@ body {
   font-family: "Rubik", sans-serif;
 }
 
+.page-container {
+  padding-top: 2%;
+}
+
+.card {
+  border-width: 0;
+  border-radius: 0%;
+}
+.card .card-header {
+  background-image: linear-gradient(to right, #e8a12f, #a4303f);
+  color: #ddf8e8;
+  border-radius: 0%;
+}
+.card .card-footer {
+  color: #ddf8e8;
+  background-image: linear-gradient(to right, #e8a12f, #a4303f);
+  border-width: 0;
+  border-radius: 0%;
+}
+
 @keyframes title-bob {
   0% {
     top: 0px;
@@ -107,36 +127,24 @@ body {
   font-weight: 700;
 }
 
-.page-container {
-  padding-top: 2%;
-}
-
-.card {
-  border-width: 0;
-  border-radius: 0%;
-}
-.card .card-header {
-  background-image: linear-gradient(to right, #e8a12f, #a4303f);
-  border-radius: 0%;
+footer {
+  color: #ddf8e8;
 }
 
 .col-3 {
   border-radius: 0;
 }
 
-.col-9 .card-header {
-  background-image: linear-gradient(to left, #e8a12f, #a4303f);
-  border-radius: 0%;
+.changelog-card {
+  height: 460px;
+}
+
+.home-card {
+  height: 250px;
 }
 
 .volume-header {
   padding-bottom: 2%;
-}
-.volume-header h3 {
-  color: #ddf8e8;
-}
-.volume-header a {
-  color: #ddf8e8;
 }
 
 .volumes-row {
@@ -144,9 +152,6 @@ body {
 }
 .volumes-row img {
   width: 100%;
-}
-.volumes-row .card-header {
-  color: #ddf8e8;
 }
 .volumes-row .card {
   overflow: hidden;
@@ -170,8 +175,15 @@ body {
   padding-top: 2%;
 }
 
-.changelog-card {
-  height: 300px;
+.book-card {
+  height: 100%;
+  background-image: linear-gradient(to right, #e8a12f, #a4303f);
+}
+.book-card img {
+  width: 100%;
+}
+.book-card p {
+  color: #ddf8e8;
 }
 
 .music-card {
@@ -193,20 +205,20 @@ body {
 .playlist-card img {
   width: 100%;
 }
-.playlist-card p {
-  color: #ddf8e8;
+
+.game-card {
+  height: 100%;
+  background-image: linear-gradient(to right, #e8a12f, #a4303f);
+}
+.game-card .card-footer {
+  margin-top: auto;
+}
+.game-card:hover {
+  z-index: 4000;
 }
 
-.playlist-header a {
-  color: #ddf8e8;
+.game-display-card img {
+  height: 540px;
 }
 
-.playlists-header {
-  color: #ddf8e8;
-}
-
-footer {
-  color: #ddf8e8;
-}
-
-/*# sourceMappingURL=base.css.map */
+/*# sourceMappingURL=main.css.map */

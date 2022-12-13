@@ -8,6 +8,9 @@ $color-lightwhite-o: rgba(255, 255, 255, 0.5);
 $color-lightsilver: "#87919e";
 
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;900&family=Oswald:wght@600&family=Rubik:wght@300;400;500;700&family=Ubuntu:wght@400;700&display=swap');
+
+// ------- base ------- //
+
 :root {
     scrollbar-width: thin !important;
     scrollbar-color: #{$color-yolkyellow} #{$color-red};
@@ -16,6 +19,7 @@ $color-lightsilver: "#87919e";
 body {
     background-color: #{$color-darkgrey};
     font-family: 'Rubik', sans-serif;
+    // color: #{$color-lightwhite};
     // ::-webkit-scrollbar {
     //     width: 12px;
     // }
@@ -29,7 +33,27 @@ body {
     // }
 }
 
+.page-container {
+    padding-top: 2%;
+}
 
+.card {
+    border-width: 0;
+    border-radius: 0%;
+    .card-header {
+        background-image: linear-gradient(#{to right, #{$color-yolkyellow}, #{$color-red}});
+        color: #{$color-lightwhite};
+        border-radius: 0%;
+    }
+    .card-footer {
+        color: #{$color-lightwhite};
+        background-image: linear-gradient(#{to right, #{$color-yolkyellow}, #{$color-red}});
+        border-width: 0;
+        border-radius: 0%;
+    }
+}
+
+// ------- title ------- //
 
 @keyframes title-bob {
     0% {
@@ -70,6 +94,8 @@ body {
         }
     }
 }
+
+// ------- navbar ------- //
 
 $speed: 0.25s;
 
@@ -151,38 +177,36 @@ $speed: 0.25s;
     }
 }
 
-.page-container {
-    padding-top: 2%;
-}
+// ------- footer ------- //
 
-.card {
-    border-width: 0;
-    border-radius: 0%;
-    .card-header {
-        background-image: linear-gradient(#{to right, #{$color-yolkyellow}, #{$color-red}});
-        border-radius: 0%;
-    }
-}
+footer {
+    color: #{$color-lightwhite};
+} 
+
+// ------- home ------- //
 
 .col-3 {
     border-radius: 0;
 }
 
-.col-9 {
-    .card-header {
-        background-image: linear-gradient(#{to left, #{$color-yolkyellow}, #{$color-red}});
-        border-radius: 0%;
-    }
+// .col-9 {
+//     .card-header {
+//         background-image: linear-gradient(#{to left, #{$color-yolkyellow}, #{$color-red}});
+//         border-radius: 0%;
+//     }
+// }
+
+.changelog-card {
+    height: 460px;
 }
 
+.home-card {
+    height: 250px;
+}
+
+// ------- volumes ------- //
+
 .volume-header {
-    h3 {
-        // color: #{$color-lightwhite};
-        color: #{$color-lightwhite};
-    }
-    a {
-        color: #{$color-lightwhite};
-    }
     padding-bottom: 2%;
 }
 
@@ -190,9 +214,6 @@ $speed: 0.25s;
     margin-bottom: -40%;
     img {
         width: 100%;
-    }
-    .card-header {
-        color: #{$color-lightwhite};
     }
     .card {
         overflow: hidden;
@@ -219,9 +240,20 @@ $speed: 0.25s;
     padding-top: 2%;
 }
 
-.changelog-card {
-    height: 300px;
+// ------- books ------- //
+
+.book-card {
+    height: 100%;
+    img {
+        width: 100%;
+    }
+    p {
+        color: #{$color-lightwhite};
+    }
+    background-image: linear-gradient(to right, #{$color-yolkyellow}, #{$color-red});
 }
+
+// ------- music ------- //
 
 .music-card {
     background-image: linear-gradient(to right, #{$color-yolkyellow}, #{$color-red});
@@ -240,22 +272,27 @@ $speed: 0.25s;
     img {
         width: 100%;
     }
-    p {
-        color: #{$color-lightwhite};
-    }
+    // p {
+    //     color: #{$color-lightwhite};
+    // }
     height: 100%;
 }
 
-.playlist-header {
-    a {
-        color: #{$color-lightwhite};
+// ------- games -------- //
+
+.game-card {
+    height: 100%;
+    .card-footer {
+        margin-top: auto;
+    }
+    background-image: linear-gradient(to right, #{$color-yolkyellow}, #{$color-red});
+    &:hover {
+        z-index: 4000;
     }
 }
 
-.playlists-header {
-    color: #{$color-lightwhite};
-}
-
-footer {
-    color: #{$color-lightwhite};
+.game-display-card {
+    img {
+        height: 540px;
+    }
 }

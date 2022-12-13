@@ -1,5 +1,5 @@
 from django.contrib import admin
-from games.models import Game, Genre, Publisher, Developer
+from games.models import Game, Genre, Company, Screenshot
 from django.utils.translation import gettext_lazy as _
 # Register your models here.
 
@@ -46,7 +46,7 @@ class GameAdmin(admin.ModelAdmin):
 
 
     model = Game
-    list_display = ['name', 'release_date', 'published_by', 'developed_by', 'favourite']
+    list_display = ['name', 'release_date', 'favourite']
     list_filter = ['favourite', SimpleDescriptionFilter]
 
 
@@ -55,17 +55,18 @@ class GenreAdmin(admin.ModelAdmin):
 
     model = Genre
 
-class DeveloperAdmin(admin.ModelAdmin):
+class CompanyAdmin(admin.ModelAdmin):
 
-    model = Developer
+    model = Company
 
-class PublisherAdmin(admin.ModelAdmin):
+class ScreenshotAdmin(admin.ModelAdmin):
 
-    model = Publisher
+    model = Screenshot
 
 
 admin.site.register(Game, GameAdmin)
 admin.site.register(Genre, GenreAdmin)
-admin.site.register(Developer, DeveloperAdmin)
-admin.site.register(Publisher, PublisherAdmin)
+admin.site.register(Company, CompanyAdmin)
+admin.site.register(Screenshot, ScreenshotAdmin)
+
 
