@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.views.generic import TemplateView
 from music.models import Playlist
-from music.api import populate_database_data
+from music.api import populate_database_data, remove_unused
 class MusicShelvesView(TemplateView):
     template_name = 'music/shelves.html'
 
@@ -26,5 +26,7 @@ class UpdatePlaylistsView(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
+        context['playlist_id'] = kwargs['id']
         context['returned_list'] = populate_database_data(kwargs['id'])
+        # context['removed_list'] = remove_unused(kwargs['id'])
         return context

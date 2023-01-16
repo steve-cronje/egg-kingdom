@@ -47,7 +47,7 @@ class GameAdmin(admin.ModelAdmin):
 
     model = Game
     list_display = ['name', 'release_date', 'favourite']
-    list_filter = ['favourite', SimpleDescriptionFilter]
+    list_filter = ['favourite', 'abs_favourite', 'want', SimpleDescriptionFilter]
 
 
 

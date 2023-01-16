@@ -124,3 +124,26 @@ def populate_database_data(playlist_id):
 
 '''TODO create api method that removed tracks / albums / artists from database if not in spotify playlists'''
 
+
+def remove_unused(playlist_id):
+    auth_manager = SpotifyClientCredentials(client_id=settings.SPOTIFY_CLIENT_ID, client_secret=settings.SPOTIFY_CLIENT_SECRET)
+    sp = spotipy.Spotify(auth_manager=auth_manager)
+    playlist = sp.user_playlist('mrpotato252', playlist_id)
+    list_of_artists = []
+    list_of_albums = []
+    list_of_tracks = []
+    for item in playlist['tracks']['items']:
+        try:
+
+            track = Track.objects.get(id=item['track']['id'])
+            if track not in list_of_tracks and playlist_id in track.playlist_set:
+                list_of_tracks.append(track)
+
+        except Exception as e:
+            print(e)
+
+    for track in Track.objects.all():
+        if track not in list_of_tracks:
+            track.delete()
+            print('track deleted')
+

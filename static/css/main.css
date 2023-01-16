@@ -22,6 +22,11 @@ body {
   color: #ddf8e8;
   border-radius: 0%;
 }
+.card .sub-news-header {
+  background-image: none;
+  color: black;
+  border-radius: 0%;
+}
 .card .card-footer {
   color: #ddf8e8;
   background-image: linear-gradient(to right, #e8a12f, #a4303f);
@@ -139,8 +144,14 @@ footer {
   height: 460px;
 }
 
-.home-card {
-  height: 250px;
+.news-card {
+  background-image: linear-gradient(to left, #e8a12f, #a4303f);
+  height: 460px;
+  padding: 0%;
+}
+.news-card .home-card {
+  padding-left: 10%;
+  padding-right: 10%;
 }
 
 .volume-header {
@@ -219,6 +230,19 @@ footer {
 
 .game-display-card img {
   height: 540px;
+}
+
+.games-add-form .game-id {
+  border-radius: 0;
+}
+.games-add-form .game-text {
+  height: 100px;
+  border-radius: 0;
+}
+
+.add-game-btn {
+  width: 100%;
+  border-radius: 0;
 }
 
 /*# sourceMappingURL=main.css.map */

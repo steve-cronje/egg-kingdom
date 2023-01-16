@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container page-container">
+    <div class="row g-2 p-0">
+        <div class="col-12 mb-4 text-center">
+            <form method="post">
+                {% csrf_token %}
+                <div class="form-floating mb-3">
+                    {{ form.name }}
+                    <label for="{{ form.game_id.id_for_label }}" class="form-label">Name</label>
+                </div>
+                <div class="form-floating mb-3">
+                    {{ form.my_description }}
+                    <label for="{{ form.my_description.id_for_label }}" class="form-label">Your thoughts on this game</label>
+                </div>
+                <div class="col-12">
+                    <input class="btn btn-outline-light btn-lg add-game-btn" type="submit" value="Complete editing">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}

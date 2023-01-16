@@ -10,12 +10,19 @@
         <div class="col-12">
             <div class="card game-display-card">
                 <div class="card-header text-center">
+                    
                     <h3 class="display-3">{{ game.name }}</h3>
                     {% if game.release_date %}
                     <p>{{ game.release_date }}</p>
                     {% else %}
                     <p>TBA</p>
                     {% endif %}
+                    <h2><span class="badge bg-primary rounded-pill position-relative fave-badge">
+                        Favourite
+                        <h5><span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                            Absolute
+                        </span></h5>
+                    </span></h2>
                 </div>
                 <div id="carouselExampleIndicators" class="carousel slide carousel-fade" data-bs-ride="true">
                     <div class="carousel-indicators">
@@ -69,6 +76,9 @@
                 </div>
             </div>
         </div>
+    </div>
+    <div class="row g-2 p-0 mt-4 text-center">
+        <a href="{% url 'game-edit' game.id %}" class="btn btn-outline-light btn-lg add-game-btn">Edit</a>
     </div>
 </div>
 

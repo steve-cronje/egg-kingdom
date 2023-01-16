@@ -2,6 +2,11 @@
 
 {% block content %}
 <div class="container page-container">
+    <div class="row g-2 p-0 mb-4">
+        <div class="col-12 text-center playlist-header">
+            <a href="{% url 'playlist' playlist_id %}" class="text-decoration-none display-3 hvr-grow">Back to playlist</a>
+        </div>
+    </div>
     <div class="row g-2 p-0">
         <div class="col-12 text-center">
             <h5 class="display-5">Has the updating of this playlist been successful?</h5>
@@ -13,5 +18,10 @@
             {% endif %}
         </div>
     </div>
+    <!-- <div class="row g-2 p-0">
+        <div class="col-12 text-center">
+            <h5 class="display-5">Removed songs not in playlist.</h5>
+        </div>
+    </div> -->
 </div>
 {% endblock content %}

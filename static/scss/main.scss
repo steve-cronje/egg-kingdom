@@ -45,6 +45,11 @@ body {
         color: #{$color-lightwhite};
         border-radius: 0%;
     }
+    .sub-news-header {
+        background-image:none;
+        color: black;
+        border-radius: 0%;
+    }
     .card-footer {
         color: #{$color-lightwhite};
         background-image: linear-gradient(#{to right, #{$color-yolkyellow}, #{$color-red}});
@@ -200,8 +205,14 @@ footer {
     height: 460px;
 }
 
-.home-card {
-    height: 250px;
+.news-card {
+    background-image: linear-gradient(#{to left, #{$color-yolkyellow}, #{$color-red}});
+    height: 460px;
+    padding: 0%;
+    .home-card {
+        padding-left: 10%;
+        padding-right: 10%;
+    }
 }
 
 // ------- volumes ------- //
@@ -295,4 +306,19 @@ footer {
     img {
         height: 540px;
     }
+}
+
+.games-add-form {
+    .game-id {
+        border-radius: 0;
+    }
+    .game-text {
+        height: 100px;
+        border-radius: 0;
+    }
+}
+
+.add-game-btn {
+    width: 100%;
+    border-radius: 0;
 }
