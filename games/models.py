@@ -38,7 +38,6 @@ class Game(models.Model):
         enter '2' as option for absolute favourite
         enter '0' as option for want to play
         '''
-
         if option == 0:
             self.favourite = False
             self.abs_favourite = False
@@ -52,6 +51,7 @@ class Game(models.Model):
             self.abs_favourite = True
             self.want = False
         self.save()
+        print(f'{self.name} has had its favourite status updated!')
 
     def __str__(self):
         return self.name

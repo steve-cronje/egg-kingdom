@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.views.generic import ListView, DetailView, TemplateView, FormView, UpdateView
 from games.models import Game
 import games.api as api
@@ -34,6 +34,7 @@ class GameEditView(UpdateView):
     form_class = GameEditForm
     model = Game    
 
+
 class CallApiView(TemplateView):
     template_name = 'games/api.html'
     model = Game
@@ -47,4 +48,9 @@ class CallApiView(TemplateView):
         return context
 
 
+def ChangeFavouriteView(request, pk):
 
+    game = get_object_or_404(Game, pk=pk)
+    game.make_favourite(int(request.POST['favourite']))
+    return redirect(game)
+    
