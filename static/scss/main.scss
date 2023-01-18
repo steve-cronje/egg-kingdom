@@ -308,17 +308,41 @@ footer {
     }
 }
 
-.games-add-form {
-    .game-id {
-        border-radius: 0;
-    }
-    .game-text {
-        height: 100px;
-        border-radius: 0;
-    }
+.game-id {
+    border-radius: 0;
+}
+
+.game-text {
+    height: 100px;
+    border-radius: 0;
 }
 
 .add-game-btn {
     width: 100%;
     border-radius: 0;
+}
+
+.delete-game-btn {
+    width: 100%;
+    border-radius: 0;
+}
+
+.game-delete-text {
+    color: #{$color-lightwhite}
+}
+
+.game-delete-img {
+    width: 300px;
+}
+
+.games-shelves-tabs {
+    .nav-link {
+        border-radius: 0% !important;
+        color: #{$color-lightwhite} !important;
+        font-size: 25px;
+    };
+    .active {
+        background-color: rgba(255, 255, 255, 0) !important;
+        background-image: linear-gradient(to right, #{$color-yolkyellow}, #{$color-red});
+    }
 }

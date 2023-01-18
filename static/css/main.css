@@ -232,10 +232,11 @@ footer {
   height: 540px;
 }
 
-.games-add-form .game-id {
+.game-id {
   border-radius: 0;
 }
-.games-add-form .game-text {
+
+.game-text {
   height: 100px;
   border-radius: 0;
 }
@@ -243,6 +244,29 @@ footer {
 .add-game-btn {
   width: 100%;
   border-radius: 0;
+}
+
+.delete-game-btn {
+  width: 100%;
+  border-radius: 0;
+}
+
+.game-delete-text {
+  color: #ddf8e8;
+}
+
+.game-delete-img {
+  width: 300px;
+}
+
+.games-shelves-tabs .nav-link {
+  border-radius: 0% !important;
+  color: #ddf8e8 !important;
+  font-size: 25px;
+}
+.games-shelves-tabs .active {
+  background-color: rgba(255, 255, 255, 0) !important;
+  background-image: linear-gradient(to right, #e8a12f, #a4303f);
 }
 
 /*# sourceMappingURL=main.css.map */

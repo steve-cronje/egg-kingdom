@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container page-container">
+    <div class="row g-2 p-0">
+        <div class="col-12 text-center">
+            <p class="display-5 game-delete-text">Are you sure you want to delete {{ game.name }}?</p>
+            <img src="{{ game.cover_url }}" class="game-delete-img"/>
+        </div>
+        <div class="col-12 mt-4 text-center">
+            <form method="post">
+                {% csrf_token %}
+                <div class="btn-group">
+                    <input type="submit" class="btn btn-lg btn-outline-danger delete-game-btn" value="Yes, delete"/>
+                    <a href="{% url 'game' game.id %}" type="button" class="btn btn-lg btn-outline-light delete-game-btn">No, don't delete</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}

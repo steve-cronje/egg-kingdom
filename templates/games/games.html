@@ -1,0 +1,122 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container page-containter">
+    <div class="row g-2 p-0 text-center">
+        <div class="col-12 mb-4">
+            <nav>
+            <div class="nav nav-pills mb-3 text-decoration-none justify-content-center nav-justified games-shelves-tabs" id="pills-tab" role="tablist">
+                    <button class="nav-link active" id="pills-all-tab" data-bs-toggle="pill" data-bs-target="#pills-all"
+                        type="button" role="tab" aria-controls="pills-all" aria-selected="true">ALL GAMES</button>
+                
+                    <button class="nav-link" id="pills-favourite-tab" data-bs-toggle="pill" data-bs-target="#pills-favourite"
+                        type="button" role="tab" aria-controls="pills-favourite" aria-selected="false">FAVOURITES</button>
+                
+                    <button class="nav-link" id="pills-abs-favourite-tab" data-bs-toggle="pill" data-bs-target="#pills-abs-favourite"
+                        type="button" role="tab" aria-controls="pills-abs-favourite" aria-selected="false">ABSOLUTE FAVOURITES</button>
+                
+                    <button class="nav-link" id="pills-want-tab" data-bs-toggle="pill" data-bs-target="#pills-want"
+                        type="button" role="tab" aria-controls="pills-want" aria-selected="false">WANT TO PLAY</button>
+                
+
+            </div>
+        </nav>
+        </div>
+        <div class="tab-content" id="pills-tabContent">
+            <div class="tab-pane fade show active" id="pills-all" role="tabpanel" aria-labelledby="pills-all-tab"
+                tabindex="0">
+                <div class="row g-2 p-0 text-center">
+                {% for game in all_games %}
+                    <div class="col-2">
+                        <a class="card game-card text-decoration-none" href="{% url 'game' game.pk %}">
+                            <!-- <div class="card-header text-center">
+                                {{ game.name }}
+                            </div> -->
+                            <img src="{{ game.cover_url }}" class="hvr-bounce-in">
+                            <div class="card-footer text-center">
+                                {% if game.release_date %}
+                                {{ game.release_date }}
+                                {% else %}
+                                TBA
+                                {% endif %}
+                            </div>
+                        </a>
+                    </div>
+                {% endfor %}
+                </div>
+            </div>
+            <div class="tab-pane fade" id="pills-favourite" role="tabpanel" aria-labelledby="pills-favourite-tab"
+                tabindex="0">
+                <div class="row g-2 p-0 text-center">
+                {% for game in favourites %}
+                    <div class="col-2">
+                        <a class="card game-card text-decoration-none" href="{% url 'game' game.pk %}">
+                            <!-- <div class="card-header text-center">
+                                {{ game.name }}
+                            </div> -->
+                            <img src="{{ game.cover_url }}" class="hvr-bounce-in">
+                            <div class="card-footer text-center">
+                                {% if game.release_date %}
+                                {{ game.release_date }}
+                                {% else %}
+                                TBA
+                                {% endif %}
+                            </div>
+                        </a>
+                    </div>
+                {% endfor %}
+                </div>
+            </div>
+            <div class="tab-pane fade" id="pills-abs-favourite" role="tabpanel" aria-labelledby="pills-abs-favourite-tab"
+                tabindex="0">
+                <div class="row g-2 p-0 text-center">
+                {% for game in abs_favourites %}
+                    <div class="col-2">
+                        <a class="card game-card text-decoration-none" href="{% url 'game' game.pk %}">
+                            <!-- <div class="card-header text-center">
+                                {{ game.name }}
+                            </div> -->
+                            <img src="{{ game.cover_url }}" class="hvr-bounce-in">
+                            <div class="card-footer text-center">
+                                {% if game.release_date %}
+                                {{ game.release_date }}
+                                {% else %}
+                                TBA
+                                {% endif %}
+                            </div>
+                        </a>
+                    </div>
+                {% endfor %}
+                </div>
+            </div>
+            <div class="tab-pane fade" id="pills-want" role="tabpanel" aria-labelledby="pills-want-tab"
+                tabindex="0">
+                <div class="row g-2 p-0 text-center">
+                {% for game in want %}
+                    <div class="col-2">
+                        <a class="card game-card text-decoration-none" href="{% url 'game' game.pk %}">
+                            <!-- <div class="card-header text-center">
+                                {{ game.name }}
+                            </div> -->
+                            <img src="{{ game.cover_url }}" class="hvr-bounce-in">
+                            <div class="card-footer text-center">
+                                {% if game.release_date %}
+                                {{ game.release_date }}
+                                {% else %}
+                                TBA
+                                {% endif %}
+                            </div>
+                        </a>
+                    </div>
+                {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row g-2 p-0 mt-4">
+        <div class="col-12 text-center">
+            <a href="{% url 'game-add' %}" class="btn btn-outline-light btn-lg add-game-btn">Add Game</a>
+        </div>
+    </div>
+</div>
+{% endblock content %}

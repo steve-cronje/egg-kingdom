@@ -4,15 +4,21 @@
 
 <div class="container page-container">
     <div class="row g-2 pb-4 text-center">
-        <a href="{% url 'games-shelves' %}"
+        <a href="{% url 'games' %}"
             class="display-6 mb-4 text-light text-decoration-none games-shelf-link hvr-grow">Back to shelf</a>
     </div>
     <div class="row g-2 pb-2">
         <div class="col-12">
             <div class="card game-display-card">
                 <div class="card-header text-center">
-
-                    <h3 class="display-3">{{ game.name }}</h3>
+                    <h3 class="display-3">{{ game.name }}
+                        {% if game.abs_favourite %}
+                        <span
+                            class="position-absolute top-0 start-0 translate-middle badge rounded-pill bg-danger">
+                            <i class="fa-solid fa-heart"></i>
+                        </span>
+                        {% endif %}
+                    </h3>
                     {% if game.release_date %}
                     <p>{{ game.release_date }}</p>
                     {% else %}
@@ -21,18 +27,12 @@
                     <div class="dropdown">
                         <div class="btn-group">
                             <button type="button" class="btn btn-lg btn-primary position-relative fave-badge">
-                                {% if game.favourite %}
+                                {% if game.favourite or game.abs_favourite %}
                                 Favourite
-                                {% elif game.abs_favourite %}
-                                Favourite
-                                <h5><span
-                                    class="position-absolute top-0 start-0 translate-middle badge rounded-pill bg-danger">
-                                    Absolute
-                                </span></h5>
                                 {% elif game.want %}
                                 Want to play
                                 {% else %}
-                                ???
+                                ...
                                 {% endif %}
                             </button>
                             <button type="button" class="btn btn-lg btn-primary dropdown-toggle" data-bs-toggle="dropdown"

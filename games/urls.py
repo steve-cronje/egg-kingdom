@@ -1,11 +1,19 @@
 from django.urls import path
-from games.views import GamesShelvesView, CallApiView, GameDisplayView, GameAddView, GameEditView, ChangeFavouriteView
-
+from games.views import ( 
+    GamesView, 
+    CallApiView, 
+    GameDisplayView, 
+    GameAddView, 
+    GameEditView, 
+    game_favourite_update_view,
+    GameDeleteView,
+)
 urlpatterns = [
-    path('shelves/', GamesShelvesView.as_view(), name='games-shelves'),
-    path('callapi/', CallApiView.as_view(), name='games-apicall'),
-    path('game/<str:pk>/', GameDisplayView.as_view(), name='game-display'),
+    path('', GamesView.as_view(), name='games'),
+    # path('callapi/', CallApiView.as_view(), name='games-apicall'),
+    path('game/<int:pk>/', GameDisplayView.as_view(), name='game'),
     path('add/', GameAddView.as_view(), name='game-add'),
-    path('edit/<str:pk>/', GameEditView.as_view(), name='game-edit'),
-    path('edit/fave/<str:pk>/', ChangeFavouriteView, name='game-fave-edit'),
+    path('edit/<int:pk>/', GameEditView.as_view(), name='game-edit'),
+    path('edit/fave/<int:pk>/', game_favourite_update_view, name='game-fave-edit'),
+    path('delete/<int:pk>/', GameDeleteView.as_view(), name='game-delete'),
 ]
