@@ -113,10 +113,12 @@
             </div>
         </div>
     </div>
+    {% if user.is_superuser %}
     <div class="row g-2 p-0 mt-4">
         <div class="col-12 text-center">
             <a href="{% url 'game-add' %}" class="btn btn-outline-light btn-lg add-game-btn">Add Game</a>
         </div>
     </div>
+    {% endif %}
 </div>
 {% endblock content %}

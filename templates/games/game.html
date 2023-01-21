@@ -24,6 +24,7 @@
                     {% else %}
                     <p>TBA</p>
                     {% endif %}
+                    {% if user.is_superuser %}
                     <div class="dropdown">
                         <div class="btn-group">
                             <button type="button" class="btn btn-lg btn-primary position-relative fave-badge">
@@ -55,16 +56,19 @@
                                 </div>
                                 <button type="submit" class="btn btn-primary">Confirm</button>
                             </form>
+                        </div>
                     </div>
-                    </div>
-
-                    <!-- <button type="button" class="btn btn-lg btn-primary rounded-pill position-relative fave-badge">
+                    {% else %}
+                    <button type="button" class="btn btn-lg btn-primary position-relative fave-badge">
+                        {% if game.favourite or game.abs_favourite %}
                         Favourite
-                        <h5><span
-                                class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-                                Absolute
-                            </span></h5>
-                    </button> -->
+                        {% elif game.want %}
+                        Want to play
+                        {% else %}
+                        ...
+                        {% endif %}
+                    </button>
+                    {% endif %}
                 </div>
                 <div id="carouselExampleIndicators" class="carousel slide carousel-fade" data-bs-ride="true">
                     <div class="carousel-indicators">
@@ -123,9 +127,11 @@
             </div>
         </div>
     </div>
+    {% if user.is_superuser %}
     <div class="row g-2 p-0 mt-4 text-center">
         <a href="{% url 'game-edit' game.id %}" class="btn btn-outline-light btn-lg add-game-btn">Edit</a>
     </div>
+    {% endif %}
 </div>
 
 {% endblock content %}

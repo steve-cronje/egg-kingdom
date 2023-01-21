@@ -1,7 +1,6 @@
 from django.urls import path
 from games.views import ( 
     GamesView, 
-    CallApiView, 
     GameDisplayView, 
     GameAddView, 
     GameEditView, 

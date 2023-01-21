@@ -3,6 +3,8 @@ from django.views.generic import ListView, DetailView, TemplateView, FormView, U
 from games.models import Game
 import games.api as api
 from games.forms import GameAddForm, GameEditForm
+from main.utils import SuperUserRequiredMixin
+from django.contrib.auth.decorators import login_required
 
 class GamesView(ListView):
     template_name = 'games/games.html'
@@ -21,7 +23,7 @@ class GameDisplayView(DetailView):
     model = Game
 
 
-class GameAddView(CreateView):
+class GameAddView(CreateView, SuperUserRequiredMixin):
 
     template_name = "games/addform.html"
     model = Game
@@ -31,7 +33,7 @@ class GameAddView(CreateView):
         game = api.add_game_with_id(int(request.POST['game_id']), request.POST['my_description'])
         return redirect(game)
 
-class GameEditView(UpdateView):
+class GameEditView(UpdateView, SuperUserRequiredMixin):
 
     template_name = "games/editform.html"
     form_class = GameEditForm
@@ -43,27 +45,31 @@ class GameEditView(UpdateView):
         return context
 
 
-class CallApiView(TemplateView):
-    template_name = 'games/api.html'
-    model = Game
+# class CallApiView(TemplateView):
+#     template_name = 'games/api.html'
+#     model = Game
 
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        # csv_list = api.parse_gameslist_csv('C:\\Users\\Potato\\Desktop\\index-ludorum-pro-ovo-rege.csv')
-        # api.populate_gamesdb_with_data('C:\\Users\\Potato\\Desktop\\json_gameslist.txt')
-        # api.get_igdb_data_from_db()
-        # print(csv_list)
-        return context
+#     def get_context_data(self, **kwargs):
+#         context = super().get_context_data(**kwargs)
+#         # csv_list = api.parse_gameslist_csv('C:\\Users\\Potato\\Desktop\\index-ludorum-pro-ovo-rege.csv')
+#         # api.populate_gamesdb_with_data('C:\\Users\\Potato\\Desktop\\json_gameslist.txt')
+#         # api.get_igdb_data_from_db()
+#         # print(csv_list)
+#         return context
 
-
+@login_required
 def game_favourite_update_view(request, pk):
 
     game = get_object_or_404(Game, pk=pk)
-    game.make_favourite(int(request.POST['favourite']))
+    
+    if request.user.is_superuser:
+        game.make_favourite(int(request.POST['favourite']))
+    
     return redirect(game)
+    
 
 
-class GameDeleteView(DeleteView):
+class GameDeleteView(DeleteView, SuperUserRequiredMixin):
 
     model = Game
     success_url = "/games/"
