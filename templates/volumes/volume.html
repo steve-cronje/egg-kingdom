@@ -5,27 +5,27 @@
 <div class="container page-container">
     <div class="row g-0">
         <div class="col-2 text-center volume-header">
-            {% if volumenum > 1 %}
-            <a href="{% url 'volume' volumenum|add:'-1' %}" class="display-3 hvr-icon-back"><i class="fa-sharp fa-solid fa-chevron-left hvr-icon"></i></a>
+            {% if meme.pk > 1 %}
+            <a href="{% url 'volume' meme.pk|add:'-1' %}" class="display-3 hvr-icon-back"><i class="fa-sharp fa-solid fa-chevron-left hvr-icon"></i></a>
             {% endif %}
         </div>
         <div class="col-8 text-center volume-header">
             <a href="{% url 'volumes' %}" class="text-decoration-none display-3 hvr-grow">Back to Volumes</a>
         </div>
         <div class="col-2 text-center volume-header">
-            {% if volumenum < 4 %}
-            <a href="{% url 'volume' volumenum|add:'1' %}" class="display-3 hvr-icon-forward"><i class="fa-sharp fa-solid fa-chevron-right hvr-icon"></i></a>
+            {% if meme.pk < 4 %}
+            <a href="{% url 'volume' meme.pk|add:'1' %}" class="display-3 hvr-icon-forward"><i class="fa-sharp fa-solid fa-chevron-right hvr-icon"></i></a>
             {% endif %}
         </div>
     </div>
     <div class="row">
         <div class="col-12 img-container text-center">
-            <img src="{% static volume %}">
+            <img src="{{ meme.image_url.url }}">
         </div>
     </div>
     <div class="row g-0">
         <div class="col-12 img-base text-center">
-            <p class="display-3">Volume {{ volumenum }}</p>
+            <p class="display-3">{{ meme }}</p>
             <hr>
             <p class="display-6">A wonderful meme</p>
         </div>

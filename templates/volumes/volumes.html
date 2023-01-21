@@ -1,46 +1,32 @@
 {% extends 'base.html' %}
-{% load static %}
 
 {% block content %}
 <div class="container page-container">
+    {% if memes %}
     <div class="row volumes-row">
+        {% for volume in memes %}
         <div class="col-3">
             <div class="card hvr-bob">
                 <div class="card-header text-center">
-                    Volume 1
+                    {{ volume }}
                 </div>
-                <a href="{% url 'volume' 1 %}"><img src="{% static 'img/volumes/volume1.png' %}" class="hvr-bob"></a>
+                <a href="{% url 'volume' volume.pk %}"><img src="{{ volume.image_url.url }}" class="hvr-bob"/></a>
             </div>
         </div>
-        <div class="col-3">
-            <div class="card hvr-bob">
-                <div class="card-header text-center">
-                    Volume 2
-                </div>
-                <a href="{% url 'volume' 2 %}"><img src="{% static 'img/volumes/volume2.png' %}" class="hvr-bob"></a>
-            </div>
-        </div>
-        <div class="col-3">
-            <div class="card hvr-bob">
-                <div class="card-header text-center">
-                    Volume 3
-                </div>
-                <a href="{% url 'volume' 3 %}"><img src="{% static 'img/volumes/volume3.png' %}" class="hvr-bob"></a>
-            </div>
-        </div>
-        <div class="col-3">
-            <div class="card hvr-bob">
-                <div class="card-header text-center">
-                    Volume 4
-                </div>
-                <a href="{% url 'volume' 4 %}"><img src="{% static 'img/volumes/volume4.png' %}" class="hvr-bob"></a>
-            </div>
-        </div>
+        {% endfor %}
     </div>
     <div class="row g-0">
         <div class="col-12 volumes-folder text-center">
             <h3 class="display-3">Meme Volumes</h3>
         </div>
     </div>
+    {% else %}
+    <div class="row volumes-row">
+        <div class="col-12 text-center">
+            <h3 class="display-3 text-light">There are no memes!</h3>
+            <h5 class="text-light">Maybe come back when you have memes.</h5>
+        </div>
+    </div>  
+    {% endif %}
 </div>
 {% endblock %}

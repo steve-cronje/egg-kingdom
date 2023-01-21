@@ -354,3 +354,6 @@ MigrationBackup/
 
 # ENV
 *.env
+
+# private memes
+media/memes/

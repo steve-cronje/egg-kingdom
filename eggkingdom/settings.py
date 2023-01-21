@@ -50,7 +50,6 @@ INSTALLED_APPS = [
     'volumes.apps.VolumesConfig',
     'music.apps.MusicConfig',
     'games.apps.GamesConfig',
-    'books.apps.BooksConfig',
 ]
 
 MIDDLEWARE = [
@@ -76,6 +75,9 @@ STATIC_URL = 'static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, STATIC_URL),
 ]
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 TEMPLATES = [
     {

@@ -10,10 +10,10 @@ class GamesView(ListView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['all_games'] = self.model.objects.all().order_by('release_date')
-        context['favourites'] = self.model.objects.filter(favourite=True).order_by('release_date')
-        context['abs_favourites'] = self.model.objects.filter(abs_favourite=True).order_by('release_date')
-        context['want'] = self.model.objects.filter(want=True).order_by('release_date')
+        context['all_games'] = self.model.objects.all().order_by('name')
+        context['favourites'] = self.model.objects.filter(favourite=True).order_by('name')
+        context['abs_favourites'] = self.model.objects.filter(abs_favourite=True).order_by('name')
+        context['want'] = self.model.objects.filter(want=True).order_by('name')
         return context
 
 class GameDisplayView(DetailView):
@@ -66,7 +66,7 @@ def game_favourite_update_view(request, pk):
 class GameDeleteView(DeleteView):
 
     model = Game
-    success_url = "/games/shelves/"
+    success_url = "/games/"
     template_name = "games/deleteform.html"
     context_object_name = 'game'
 

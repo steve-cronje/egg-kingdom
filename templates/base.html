@@ -37,9 +37,6 @@
                             <li class="nav-item">
                                 <a class="nav-link hvr-icon-wobble-vertical hvr-underline-from-center" href="{% url 'games' %}"><i class="fa-solid fa-gamepad hvr-icon"></i>&nbsp;&nbsp;&nbsp;&nbsp;Games Shelf&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa-solid fa-egg hvr-icon"></i></a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link hvr-icon-wobble-vertical hvr-underline-from-center" href="{% url 'book-shelves' %}"><i class="fa-solid fa-book hvr-icon"></i>&nbsp;&nbsp;&nbsp;&nbsp;Book Shelf&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa-solid fa-egg hvr-icon"></i></a>
-                            </li>
                             {% if user.is_staff %}
                             <li class="nav-item">
                                 <a class="nav-link hvr-icon-wobble-vertical hvr-underline-from-center" href="{% url 'admin:index' %}"><i class="fa-solid fa-crown hvr-icon"></i>&nbsp;&nbsp;&nbsp;&nbsp;Admin&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa-solid fa-egg hvr-icon"></i></a>
