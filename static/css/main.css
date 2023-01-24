@@ -97,7 +97,7 @@ body {
   display: block;
   transition: 0.25s;
   position: absolute;
-  background-image: linear-gradient(to left, #e8a12f, #a4303f, #e8a12f);
+  background-image: linear-gradient(to right, #e8a12f, #a4303f, #e8a12f);
   content: attr(data-back);
   transform: translateY(-50%) rotateX(90deg);
 }
@@ -167,14 +167,16 @@ footer {
 .volumes-row .card {
   overflow: hidden;
   height: 40%;
+  box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.699);
 }
 
 .volumes-folder {
   padding-top: 2%;
   z-index: 999;
-  background-image: linear-gradient(to left, #e8a12f, #a4303f, #e8a12f);
+  background-image: linear-gradient(to right, #e8a12f, #a4303f, #e8a12f);
   color: #ddf8e8;
   padding-bottom: 2%;
+  box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.699);
 }
 
 .img-container img {
@@ -211,7 +213,6 @@ footer {
 
 .playlist-card {
   background-image: linear-gradient(to right, #e8a12f, #a4303f);
-  height: 100%;
 }
 .playlist-card img {
   width: 100%;
@@ -220,6 +221,7 @@ footer {
 .game-card {
   height: 100%;
   background-image: linear-gradient(to right, #e8a12f, #a4303f);
+  box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.699);
 }
 .game-card .card-footer {
   margin-top: auto;
@@ -261,12 +263,25 @@ footer {
 
 .games-shelves-tabs .nav-link {
   border-radius: 0% !important;
-  color: #ddf8e8 !important;
   font-size: 25px;
 }
 .games-shelves-tabs .active {
   background-color: rgba(255, 255, 255, 0) !important;
   background-image: linear-gradient(to right, #e8a12f, #a4303f);
+}
+.games-shelves-tabs :hover {
+  background-image: linear-gradient(to right, #e8a12f, #a4303f);
+}
+
+.games-shelf-div {
+  width: 952px;
+  height: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: auto;
+  background-image: linear-gradient(to right, #e8a12f, #a4303f, #e8a12f);
+  box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.699);
+  z-index: 9999;
 }
 
 /*# sourceMappingURL=main.css.map */

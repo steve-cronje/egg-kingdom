@@ -63,7 +63,7 @@ def populate_database_data(playlist_id):
     sp = spotipy.Spotify(auth_manager=auth_manager)
     playlist = sp.user_playlist('mrpotato252', playlist_id)
     list_of_errors = []
-    list_of_new_objects = []
+    list_of_new_objects = {'artist': [], 'album': [], 'track': []}
     for item in playlist['tracks']['items']:
         try:
             artists = item['track']['artists']
@@ -74,7 +74,7 @@ def populate_database_data(playlist_id):
                     artist.artist_type = x['type']
                     artist.spotify_url = x['external_urls']['spotify']
                     artist.save()
-                    list_of_new_objects.append((artist.name, 'Artist'))
+                    list_of_new_objects['artist'].append(artist.name)
 
             for x in item['track']['album']['artists']:
                 artist, artist_created = Artist.objects.get_or_create(id=x['id'])
@@ -83,7 +83,7 @@ def populate_database_data(playlist_id):
                     artist.artist_type = x['type']
                     artist.spotify_url = x['external_urls']['spotify']
                     artist.save()
-                    list_of_new_objects.append((artist.name, 'Artist'))
+                    list_of_new_objects['artist'].append(artist.name)
 
 
         except Exception as e:
@@ -101,7 +101,7 @@ def populate_database_data(playlist_id):
                 album.spotify_url = item['track']['album']['external_urls']['spotify']
                 album.release_date = item['track']['album']['release_date'] if re.compile('\d\d\d\d-\d\d-\d\d').match(item['track']['album']['release_date']) else item['track']['album']['release_date']+'-01-01'
                 album.save()
-                list_of_new_objects.append((album.name, 'Album'))
+                list_of_new_objects['album'].append(album.name)
 
 
             track, track_created = Track.objects.get_or_create(id=item['track']['id'])
@@ -116,7 +116,7 @@ def populate_database_data(playlist_id):
                 track.explicit_content = item['track']['explicit']
                 track.duration = item['track']['duration_ms']
                 track.save()
-                list_of_new_objects.append((track.name, 'Track'))
+                list_of_new_objects['track'].append(track.name)
         except Exception as e:
             list_of_errors.append((e, item))
 

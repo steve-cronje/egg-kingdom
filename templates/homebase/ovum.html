@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container page-container">
+    <div class="row g-2 p-0">
+        <div class="col-4 text-center">
+            <h4 class="display-4 w-100 text-light">{{ ovum.user.username }}</h4>
+            <img src="{{ ovum.image.url }}" class="user-image w-50"/>
+        </div>
+        <div class="col-4 text-center">
+            <h4 class="display-4 w-100 text-light">Title:</h4>
+            <h4 class="display-5 w-100 text-light">{{ ovum.get_status_display }}</h4>
+        </div>
+        <div class="col-4 text-center">
+            <h4 class="display-4 w-100 text-light">Eggs:</h4>
+            <h4 class="display-5 w-100 text-light">{{ ovum.eggs }}</h4>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}

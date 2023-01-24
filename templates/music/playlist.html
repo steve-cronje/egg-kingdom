@@ -4,18 +4,18 @@
 <div class="container page-container">
     <div class="row mb-4">
         <div class="col-12 text-center playlist-header">
-            <a href="{% url 'music-shelves' %}" class="text-decoration-none display-3 hvr-grow">Back to shelves</a>
+            <a href="{% url 'music:playlists' %}" class="text-decoration-none text-light display-3 hvr-grow">Back to shelves</a>
         </div>
     </div>
     <div class="row mb-4">
         <div class="col-12 text-center playlist-header">
-            <a href="{{ my_playlist.spotify_url }}" target='_blank' class="text-decoration-none display-6 hvr-grow">Link to this playlist</a>
+            <a href="{{ my_playlist.spotify_url }}" target='_blank' class="text-decoration-none text-light display-6 hvr-grow">Link to this playlist</a>
         </div>
     </div>
     {% if user.is_superuser %}
     <div class="row mb-4">
         <div class="col-12 text-center playlist-header">
-            <a href="{% url 'update-playlist' my_playlist.id %}" class="text-decoration-none hvr-grow">Update this playlist...</a>
+            <a href="{% url 'music:update' my_playlist.id %}" class="text-decoration-none text-light hvr-grow">Update this playlist...</a>
         </div>
     </div>
     {% endif %}

@@ -5,7 +5,7 @@
 <div class="container page-container">
     <div class="row g-2 p-0">
         <div class="col-12 mb-4 text-center">
-            <form action="{% url 'game-add' %}" method="post" class="games-add-form">
+            <form action="{% url 'games:add' %}" method="post" class="games-add-form">
                 {% csrf_token %}
                 <div class="form-floating mb-3">
                     {{ form.game_id }}

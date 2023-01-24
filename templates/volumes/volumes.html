@@ -6,11 +6,11 @@
     <div class="row volumes-row">
         {% for volume in memes %}
         <div class="col-3">
-            <div class="card hvr-bob">
+            <div class="card hvr-float">
                 <div class="card-header text-center">
                     {{ volume }}
                 </div>
-                <a href="{% url 'volume' volume.pk %}"><img src="{{ volume.image_url.url }}" class="hvr-bob"/></a>
+                <a href="{% url 'volumes:volume' volume.pk %}"><img src="{{ volume.image_url.url }}" class="hvr-bob"/></a>
             </div>
         </div>
         {% endfor %}

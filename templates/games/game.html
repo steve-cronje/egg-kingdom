@@ -4,7 +4,7 @@
 
 <div class="container page-container">
     <div class="row g-2 pb-4 text-center">
-        <a href="{% url 'games' %}"
+        <a href="{% url 'games:list' %}"
             class="display-6 mb-4 text-light text-decoration-none games-shelf-link hvr-grow">Back to shelf</a>
     </div>
     <div class="row g-2 pb-2">
@@ -19,6 +19,17 @@
                         </span>
                         {% endif %}
                     </h3>
+                    <p>
+                        {% for genre in game.genre.all %}
+                            {% if forloop.last %}
+                                {{ genre }}
+                            {% else %}
+                                {{ genre }},
+                            {% endif %}
+                        {% empty %}
+                            No genres!
+                        {% endfor %}
+                    </p>
                     {% if game.release_date %}
                     <p>{{ game.release_date }}</p>
                     {% else %}
@@ -40,7 +51,7 @@
                                 aria-expanded="false" data-bs-auto-close="outside">
                                 <span class="visually-hidden">Toggle Dropdown</span>
                             </button>
-                            <form action="{% url 'game-fave-edit' game.id %}" class="dropdown-menu p-4" method="post">
+                            <form action="{% url 'games:fave-edit' game.id %}" class="dropdown-menu p-4" method="post">
                                 {% csrf_token %}
                                 <div class="mb-3 form-check">
                                     <label for="favourite" class="form-label">Favourite</label>
@@ -129,7 +140,7 @@
     </div>
     {% if user.is_superuser %}
     <div class="row g-2 p-0 mt-4 text-center">
-        <a href="{% url 'game-edit' game.id %}" class="btn btn-outline-light btn-lg add-game-btn">Edit</a>
+        <a href="{% url 'games:edit' game.id %}" class="btn btn-outline-light btn-lg add-game-btn">Edit</a>
     </div>
     {% endif %}
 </div>

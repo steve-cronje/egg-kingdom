@@ -19,9 +19,9 @@ from django.conf.urls.static import static
 from django.conf import settings
 
 urlpatterns = [
-    path('', include('main.urls')),
-    path('volumes/', include('volumes.urls')),
-    path('music/', include('music.urls')),
-    path('games/', include('games.urls')),
+    path('', include(('main.urls', 'main'), namespace='home')),
+    path('volumes/', include(('volumes.urls', 'volumes'), namespace='volumes')),
+    path('music/', include(('music.urls', 'music'), namespace='music')),
+    path('games/', include(('games.urls', 'games'), namespace='games')),
     path('admin/', admin.site.urls),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)+static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

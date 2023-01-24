@@ -13,7 +13,7 @@
                 {% csrf_token %}
                 <div class="btn-group">
                     <input type="submit" class="btn btn-lg btn-outline-danger delete-game-btn" value="Yes, delete"/>
-                    <a href="{% url 'game' game.id %}" type="button" class="btn btn-lg btn-outline-light delete-game-btn">No, don't delete</a>
+                    <a href="{% url 'games:game' game.id %}" type="button" class="btn btn-lg btn-outline-light delete-game-btn">No, don't delete</a>
                 </div>
             </form>
         </div>

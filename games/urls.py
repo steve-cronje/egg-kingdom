@@ -8,11 +8,11 @@ from games.views import (
     GameDeleteView,
 )
 urlpatterns = [
-    path('', GamesView.as_view(), name='games'),
+    path('', GamesView.as_view(), name='list'),
     # path('callapi/', CallApiView.as_view(), name='games-apicall'),
     path('game/<int:pk>/', GameDisplayView.as_view(), name='game'),
-    path('add/', GameAddView.as_view(), name='game-add'),
-    path('edit/<int:pk>/', GameEditView.as_view(), name='game-edit'),
-    path('edit/fave/<int:pk>/', game_favourite_update_view, name='game-fave-edit'),
-    path('delete/<int:pk>/', GameDeleteView.as_view(), name='game-delete'),
+    path('add/', GameAddView.as_view(), name='add'),
+    path('edit/<int:pk>/', GameEditView.as_view(), name='edit'),
+    path('edit/fave/<int:pk>/', game_favourite_update_view, name='fave-edit'),
+    path('delete/<int:pk>/', GameDeleteView.as_view(), name='delete'),
 ]

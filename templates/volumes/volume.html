@@ -6,15 +6,15 @@
     <div class="row g-0">
         <div class="col-2 text-center volume-header">
             {% if meme.pk > 1 %}
-            <a href="{% url 'volume' meme.pk|add:'-1' %}" class="display-3 hvr-icon-back"><i class="fa-sharp fa-solid fa-chevron-left hvr-icon"></i></a>
+            <a href="{% url 'volumes:volume' meme.pk|add:'-1' %}" class="display-3 hvr-icon-back text-light"><i class="fa-sharp fa-solid fa-chevron-left hvr-icon"></i></a>
             {% endif %}
         </div>
         <div class="col-8 text-center volume-header">
-            <a href="{% url 'volumes' %}" class="text-decoration-none display-3 hvr-grow">Back to Volumes</a>
+            <a href="{% url 'volumes:volumes' %}" class="text-decoration-none text-light display-3 hvr-grow">Back to Volumes</a>
         </div>
         <div class="col-2 text-center volume-header">
             {% if meme.pk < 4 %}
-            <a href="{% url 'volume' meme.pk|add:'1' %}" class="display-3 hvr-icon-forward"><i class="fa-sharp fa-solid fa-chevron-right hvr-icon"></i></a>
+            <a href="{% url 'volumes:volume' meme.pk|add:'1' %}" class="display-3 hvr-icon-forward text-light"><i class="fa-sharp fa-solid fa-chevron-right hvr-icon"></i></a>
             {% endif %}
         </div>
     </div>
@@ -25,9 +25,9 @@
     </div>
     <div class="row g-0">
         <div class="col-12 img-base text-center">
-            <p class="display-3">{{ meme }}</p>
+            <p class="display-3 text-light">{{ meme }}</p>
             <hr>
-            <p class="display-6">A wonderful meme</p>
+            <p class="display-6 text-light">A wonderful meme</p>
         </div>
     </div>
 </div>

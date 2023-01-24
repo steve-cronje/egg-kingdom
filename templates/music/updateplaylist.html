@@ -4,16 +4,19 @@
 <div class="container page-container">
     <div class="row g-2 p-0 mb-4">
         <div class="col-12 text-center playlist-header">
-            <a href="{% url 'playlist' playlist_id %}" class="text-decoration-none display-3 hvr-grow">Back to playlist</a>
+            <a href="{% url 'playlist' playlist_id %}" class="text-decoration-none text-light display-3 hvr-grow">Back to playlist</a>
         </div>
     </div>
     <div class="row g-2 p-0">
-        <div class="col-12 text-center">
-            <h5 class="display-5">Has the updating of this playlist been successful?</h5>
-            <h3 class="display-3">{{ returned_list.0 }}</h3>
+        <div class="col-12 text-center text-light">
             {% if returned_list.0 %}
-            <p>{{ returned_list.1|length }} new objects added to playlist!</p>
+            <h5 class="display-5">Playlist successfully updated!</h5>
+            <p>{{ returned_list.1.0|length }} new artists added to playlist,</p>
+            <p>{{ returned_list.1.1|length }} new albums added to playlist,</p>
+            <p>{{ returned_list.1.2|length }} new tracks added to playlist!</p>
             {% else %}
+            <h5 class="display-5">Playlist didn't update properly!</h5>
+            <h6 class="display-6">Something went wrong!</h6>
             <p>{{ returned_list.1|length }} unsuccessful attempts to add object!</p>
             {% endif %}
         </div>

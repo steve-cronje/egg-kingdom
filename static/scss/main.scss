@@ -6,6 +6,10 @@ $color-yolkyellow: "#e8a12f";
 $color-lightwhite: "#ddf8e8";
 $color-lightwhite-o: rgba(255, 255, 255, 0.5);
 $color-lightsilver: "#87919e";
+$ovum-primary-gradient: linear-gradient(to right, #{$color-yolkyellow}, #{$color-red});
+$ovum-secondary-gradient: linear-gradient(to left, #{$color-yolkyellow}, #{$color-red});
+$ovum-tertiary-gradient: linear-gradient(to right, #{$color-yolkyellow}, #{$color-red}, #{$color-yolkyellow});
+$ovum-auxillary-gradient: linear-gradient(to bottom, #{$color-yolkyellow}, #{$color-red});
 
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;900&family=Oswald:wght@600&family=Rubik:wght@300;400;500;700&family=Ubuntu:wght@400;700&display=swap');
 
@@ -19,18 +23,6 @@ $color-lightsilver: "#87919e";
 body {
     background-color: #{$color-darkgrey};
     font-family: 'Rubik', sans-serif;
-    // color: #{$color-lightwhite};
-    // ::-webkit-scrollbar {
-    //     width: 12px;
-    // }
-
-    // ::-webkit-scrollbar-track {
-    //     background: #{$color-yolkyellow}
-    // }
-
-    // ::-webkit-scrollbar-thumb {
-    //     background: #{$color-red}
-    // }
 }
 
 .page-container {
@@ -41,7 +33,7 @@ body {
     border-width: 0;
     border-radius: 0%;
     .card-header {
-        background-image: linear-gradient(#{to right, #{$color-yolkyellow}, #{$color-red}});
+        background-image: $ovum-primary-gradient;
         color: #{$color-lightwhite};
         border-radius: 0%;
     }
@@ -52,7 +44,7 @@ body {
     }
     .card-footer {
         color: #{$color-lightwhite};
-        background-image: linear-gradient(#{to right, #{$color-yolkyellow}, #{$color-red}});
+        background-image: $ovum-primary-gradient;
         border-width: 0;
         border-radius: 0%;
     }
@@ -139,8 +131,7 @@ $speed: 0.25s;
         display: block;
         transition: $speed;
         position: absolute;
-        background-image: linear-gradient(#{to left, #{$color-yolkyellow}, #{$color-red}, #{$color-yolkyellow}
-        });
+        background-image: $ovum-tertiary-gradient;
     content: attr(data-back);
     transform: translateY(-50%) rotateX(90deg);
 }
@@ -171,7 +162,7 @@ $speed: 0.25s;
 .offcanvas {
     --#{$prefix}offcanvas-width: #{$offcanvas-horizontal-width};
     --#{$prefix}offcanvas-padding-x: 10%;
-    background-image: linear-gradient(to bottom, #{$color-yolkyellow}, #{$color-red});
+    background-image: $ovum-auxillary-gradient;
 
     #offcanvasCloseBtn {
         border-radius: 0%;
@@ -194,19 +185,12 @@ footer {
     border-radius: 0;
 }
 
-// .col-9 {
-//     .card-header {
-//         background-image: linear-gradient(#{to left, #{$color-yolkyellow}, #{$color-red}});
-//         border-radius: 0%;
-//     }
-// }
-
 .changelog-card {
     height: 460px;
 }
 
 .news-card {
-    background-image: linear-gradient(#{to left, #{$color-yolkyellow}, #{$color-red}});
+    background-image: $ovum-secondary-gradient;
     height: 460px;
     padding: 0%;
     .home-card {
@@ -229,15 +213,18 @@ footer {
     .card {
         overflow: hidden;
         height: 40%;
+        box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.699);
     }
+    
 }
 
 .volumes-folder {
     padding-top: 2%;
     z-index: 999;
-    background-image: linear-gradient(#{to left, #{$color-yolkyellow}, #{$color-red}, #{$color-yolkyellow}});
+    background-image: $ovum-tertiary-gradient;
     color: #{$color-lightwhite};
     padding-bottom: 2%;
+    box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.699);
 }
 
 .img-container {
@@ -247,7 +234,7 @@ footer {
 }
 
 .img-base {
-    background-image: linear-gradient(#{to right, #{$color-yolkyellow}, #{$color-red}});
+    background-image: $ovum-primary-gradient;
     padding-top: 2%;
 }
 
@@ -261,32 +248,28 @@ footer {
     p {
         color: #{$color-lightwhite};
     }
-    background-image: linear-gradient(to right, #{$color-yolkyellow}, #{$color-red});
+    background-image: $ovum-primary-gradient;
 }
 
 // ------- music ------- //
 
 .music-card {
-    background-image: linear-gradient(to right, #{$color-yolkyellow}, #{$color-red});
+    background-image: $ovum-primary-gradient;
     img {
         width: 100%;
     }
     height: 100%;
     audio {
-        background-image: linear-gradient(to right, #{$color-yolkyellow}, #{$color-red});
+        background-image: $ovum-primary-gradient;
         margin-top:auto;
     }
 }
 
 .playlist-card {
-    background-image: linear-gradient(to right, #{$color-yolkyellow}, #{$color-red});
+    background-image: $ovum-primary-gradient;
     img {
         width: 100%;
     }
-    // p {
-    //     color: #{$color-lightwhite};
-    // }
-    height: 100%;
 }
 
 // ------- games -------- //
@@ -296,10 +279,11 @@ footer {
     .card-footer {
         margin-top: auto;
     }
-    background-image: linear-gradient(to right, #{$color-yolkyellow}, #{$color-red});
+    background-image: $ovum-primary-gradient;
     &:hover {
         z-index: 4000;
     }
+    box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.699);
 }
 
 .game-display-card {
@@ -338,11 +322,24 @@ footer {
 .games-shelves-tabs {
     .nav-link {
         border-radius: 0% !important;
-        color: #{$color-lightwhite} !important;
         font-size: 25px;
     };
     .active {
         background-color: rgba(255, 255, 255, 0) !important;
-        background-image: linear-gradient(to right, #{$color-yolkyellow}, #{$color-red});
+        background-image: $ovum-primary-gradient;
     }
+    :hover {
+        background-image: $ovum-primary-gradient;
+    }
+}
+
+.games-shelf-div {
+    width: 952px;
+    height: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: auto;
+    background-image: $ovum-tertiary-gradient;
+    box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.699);
+    z-index: 9999;
 }

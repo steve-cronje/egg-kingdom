@@ -57,7 +57,7 @@ class Game(models.Model):
         return self.name
 
     def get_absolute_url(self):
-        return reverse('game', kwargs={'pk' : self.pk})
+        return reverse('games:game', kwargs={'pk' : self.pk})
         
 class Screenshot(models.Model):
 

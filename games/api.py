@@ -68,3 +68,15 @@ def add_game_with_id(id, description):
     get_screenshots(game=game)
 
     return game
+
+
+def update_game_genres(id):
+    wrapper = iwrap.IGDBWrapper(settings.TWITCH_IGDB_CLIENT_ID, settings.TWITCH_IGDB_AUTH_TOKEN)
+    byte_array = wrapper.api_request('games', f'fields genres.name; where id={id};')
+    json_dump = json.loads(byte_array)[0]
+    genres = [x['name'] for x in json_dump['genres']]
+    game = Game.objects.get(id=id)
+    for genre in genres:
+        genre, genre_created = Genre.objects.get_or_create(genre=genre)
+        game.genre.add(genre)
+        print(f'added {genre} to {game}!')
