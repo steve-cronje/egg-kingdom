@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "ccebba439666d485cdc951c87bc8234beca0d1e715a3868e080e8cdd15a71163"
+            "sha256": "01f5adfd986273358e1f6db03b97b80ca9893663d3e960bab9274f8709ae0020"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -385,12 +385,12 @@
         },
         "spotipy": {
             "hashes": [
-                "sha256:1d44c6da7f2012f4134d9b70f189ccef0fc924a7dec0a245750b3552abb0cec5",
-                "sha256:b8b9ee9b16ce259e3dbadbc78b40f3760cdc4cc33db7d930252ec790912176d0",
-                "sha256:fb7b0e86b0bbb458ffd4dc53b4627e5bb95ea52e70887b9d23e0b2ecf11ede5e"
+                "sha256:1dac15ac0aaf5246461a3cb0b3d837bc7af7b78597441289b500a5abac9fe9c4",
+                "sha256:54680dbf243a2b0cff0e591e1d269692e94265273b52ab90994a661555c04ac7",
+                "sha256:aa023d8bc606053d95e8961f52293fdd8cd12ef4fad8f829e701bb3d61c48d76"
             ],
             "index": "pypi",
-            "version": "==2.22.0"
+            "version": "==2.22.1"
         },
         "sqlparse": {
             "hashes": [
