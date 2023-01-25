@@ -122,7 +122,7 @@ body {
 
 .offcanvas {
   --bs-offcanvas-width: 250px;
-  --bs-offcanvas-padding-x: 10%;
+  --bs-offcanvas-padding-x: 0;
   background-image: linear-gradient(to bottom, #e8a12f, #a4303f);
 }
 .offcanvas #offcanvasCloseBtn {
@@ -130,6 +130,10 @@ body {
 }
 .offcanvas .offcanvas-title {
   font-weight: 700;
+}
+
+.sidebar-navbar .nav-link {
+  width: 100%;
 }
 
 footer {
@@ -156,6 +160,12 @@ footer {
 
 .volume-header {
   padding-bottom: 2%;
+}
+.volume-header .btn {
+  width: 100%;
+  border-radius: 0;
+  border-left: none;
+  border-right: none;
 }
 
 .volumes-row {
@@ -188,17 +198,6 @@ footer {
   padding-top: 2%;
 }
 
-.book-card {
-  height: 100%;
-  background-image: linear-gradient(to right, #e8a12f, #a4303f);
-}
-.book-card img {
-  width: 100%;
-}
-.book-card p {
-  color: #ddf8e8;
-}
-
 .music-card {
   background-image: linear-gradient(to right, #e8a12f, #a4303f);
   height: 100%;
@@ -215,7 +214,23 @@ footer {
   background-image: linear-gradient(to right, #e8a12f, #a4303f);
 }
 .playlist-card img {
+  height: 400px;
   width: 100%;
+}
+
+.playlist-back-btn {
+  width: 100%;
+  color: #ddf8e8;
+}
+
+.playlist-link-btn {
+  width: 100%;
+  color: #ddf8e8;
+}
+
+.update-playlist-btn {
+  width: 100%;
+  border-radius: 0;
 }
 
 .game-card {
@@ -264,13 +279,15 @@ footer {
 .games-shelves-tabs .nav-link {
   border-radius: 0% !important;
   font-size: 25px;
+  color: #ddf8e8;
 }
 .games-shelves-tabs .active {
   background-color: rgba(255, 255, 255, 0) !important;
   background-image: linear-gradient(to right, #e8a12f, #a4303f);
 }
 .games-shelves-tabs :hover {
-  background-image: linear-gradient(to right, #e8a12f, #a4303f);
+  background-color: #ddf8e8;
+  color: #2f323a;
 }
 
 .games-shelf-div {

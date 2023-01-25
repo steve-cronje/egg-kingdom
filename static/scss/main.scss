@@ -1,15 +1,16 @@
 $offcanvas-horizontal-width: 250px;
 $prefix: bs-;
-$color-darkgrey: "#2f323a";
-$color-red: "#a4303f";
-$color-yolkyellow: "#e8a12f";
-$color-lightwhite: "#ddf8e8";
+$color-darkgrey: #2f323a;
+$color-red: #a4303f;
+$color-yolkyellow: #e8a12f;
+$color-lightwhite: #ddf8e8;
 $color-lightwhite-o: rgba(255, 255, 255, 0.5);
-$color-lightsilver: "#87919e";
-$ovum-primary-gradient: linear-gradient(to right, #{$color-yolkyellow}, #{$color-red});
-$ovum-secondary-gradient: linear-gradient(to left, #{$color-yolkyellow}, #{$color-red});
-$ovum-tertiary-gradient: linear-gradient(to right, #{$color-yolkyellow}, #{$color-red}, #{$color-yolkyellow});
-$ovum-auxillary-gradient: linear-gradient(to bottom, #{$color-yolkyellow}, #{$color-red});
+$color-lightsilver: #87919e;
+$color-spotify: #1db954;
+$ovum-primary-gradient: linear-gradient(to right, $color-yolkyellow, $color-red);
+$ovum-secondary-gradient: linear-gradient(to left, $color-yolkyellow, $color-red);
+$ovum-tertiary-gradient: linear-gradient(to right, $color-yolkyellow, $color-red, $color-yolkyellow);
+$ovum-auxillary-gradient: linear-gradient(to bottom, $color-yolkyellow, $color-red);
 
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;900&family=Oswald:wght@600&family=Rubik:wght@300;400;500;700&family=Ubuntu:wght@400;700&display=swap');
 
@@ -17,11 +18,11 @@ $ovum-auxillary-gradient: linear-gradient(to bottom, #{$color-yolkyellow}, #{$co
 
 :root {
     scrollbar-width: thin !important;
-    scrollbar-color: #{$color-yolkyellow} #{$color-red};
+    scrollbar-color: $color-yolkyellow $color-red;
 }
 
 body {
-    background-color: #{$color-darkgrey};
+    background-color: $color-darkgrey;
     font-family: 'Rubik', sans-serif;
 }
 
@@ -34,7 +35,7 @@ body {
     border-radius: 0%;
     .card-header {
         background-image: $ovum-primary-gradient;
-        color: #{$color-lightwhite};
+        color: $color-lightwhite;
         border-radius: 0%;
     }
     .sub-news-header {
@@ -43,7 +44,7 @@ body {
         border-radius: 0%;
     }
     .card-footer {
-        color: #{$color-lightwhite};
+        color: $color-lightwhite;
         background-image: $ovum-primary-gradient;
         border-width: 0;
         border-radius: 0%;
@@ -83,7 +84,7 @@ body {
 
         .base-title {
             position: relative;
-            color: #{$color-lightwhite};
+            color: $color-lightwhite;
             animation-name: 'title-bob';
             animation-duration: 6s;
             animation-iteration-count: infinite;
@@ -127,7 +128,7 @@ $speed: 0.25s;
         left: 0;
         opacity: 0;
         width: 100%;
-        color: #{$color-lightwhite};
+        color: $color-lightwhite;
         display: block;
         transition: $speed;
         position: absolute;
@@ -161,7 +162,7 @@ $speed: 0.25s;
 
 .offcanvas {
     --#{$prefix}offcanvas-width: #{$offcanvas-horizontal-width};
-    --#{$prefix}offcanvas-padding-x: 10%;
+    --#{$prefix}offcanvas-padding-x: 0;
     background-image: $ovum-auxillary-gradient;
 
     #offcanvasCloseBtn {
@@ -173,10 +174,16 @@ $speed: 0.25s;
     }
 }
 
+.sidebar-navbar {
+    .nav-link {
+        width: 100%;
+    }
+}
+
 // ------- footer ------- //
 
 footer {
-    color: #{$color-lightwhite};
+    color: $color-lightwhite;
 } 
 
 // ------- home ------- //
@@ -202,6 +209,12 @@ footer {
 // ------- volumes ------- //
 
 .volume-header {
+    .btn {
+        width: 100%;
+        border-radius: 0;
+        border-left: none;
+        border-right: none;
+    }
     padding-bottom: 2%;
 }
 
@@ -222,7 +235,7 @@ footer {
     padding-top: 2%;
     z-index: 999;
     background-image: $ovum-tertiary-gradient;
-    color: #{$color-lightwhite};
+    color: $color-lightwhite;
     padding-bottom: 2%;
     box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.699);
 }
@@ -238,18 +251,6 @@ footer {
     padding-top: 2%;
 }
 
-// ------- books ------- //
-
-.book-card {
-    height: 100%;
-    img {
-        width: 100%;
-    }
-    p {
-        color: #{$color-lightwhite};
-    }
-    background-image: $ovum-primary-gradient;
-}
 
 // ------- music ------- //
 
@@ -268,9 +269,26 @@ footer {
 .playlist-card {
     background-image: $ovum-primary-gradient;
     img {
+        height: 400px;
         width: 100%;
     }
 }
+
+.playlist-back-btn {
+    width: 100%;
+    color: $color-lightwhite;
+}
+
+.playlist-link-btn {
+    width:100%;
+    color: $color-lightwhite;
+}
+
+.update-playlist-btn {
+    width: 100%;
+    border-radius: 0;
+}
+
 
 // ------- games -------- //
 
@@ -312,7 +330,7 @@ footer {
 }
 
 .game-delete-text {
-    color: #{$color-lightwhite}
+    color: $color-lightwhite
 }
 
 .game-delete-img {
@@ -323,13 +341,15 @@ footer {
     .nav-link {
         border-radius: 0% !important;
         font-size: 25px;
+        color: $color-lightwhite;
     };
     .active {
         background-color: rgba(255, 255, 255, 0) !important;
         background-image: $ovum-primary-gradient;
     }
     :hover {
-        background-image: $ovum-primary-gradient;
+        background-color: $color-lightwhite;
+        color: $color-darkgrey;
     }
 }
 

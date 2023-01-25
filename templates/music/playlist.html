@@ -2,23 +2,16 @@
 
 {% block content %}
 <div class="container page-container">
-    <div class="row mb-4">
+    <div class="row">
         <div class="col-12 text-center playlist-header">
-            <a href="{% url 'music:playlists' %}" class="text-decoration-none text-light display-3 hvr-grow">Back to shelves</a>
+            <a href="{% url 'music:playlists' %}" class="fs-2 hvr-sweep-to-top text-decoration-none playlist-back-btn">Back to playlists</a>
         </div>
     </div>
     <div class="row mb-4">
         <div class="col-12 text-center playlist-header">
-            <a href="{{ my_playlist.spotify_url }}" target='_blank' class="text-decoration-none text-light display-6 hvr-grow">Link to this playlist</a>
+            <a href="{{ my_playlist.spotify_url }}" target='_blank' class="fs-4 hvr-sweep-to-bottom text-decoration-none playlist-link-btn"><i class="fa-brands fa-spotify"></i>&nbsp;&nbsp;&nbsp;&nbsp;Find this playlist on Spotify&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa-brands fa-spotify"></i></a>
         </div>
     </div>
-    {% if user.is_superuser %}
-    <div class="row mb-4">
-        <div class="col-12 text-center playlist-header">
-            <a href="{% url 'music:update' my_playlist.id %}" class="text-decoration-none text-light hvr-grow">Update this playlist...</a>
-        </div>
-    </div>
-    {% endif %}
     <div class="row g-2 p-0">
     {% for track in my_playlist.track_set.all %}
         <div class="col-4 mb-4">
@@ -51,6 +44,12 @@
         </div>
     {% endfor %}
     </div>
-    
+    {% if user.is_superuser %}
+    <div class="row mt-2">
+        <div class="col-12 text-center">
+            <a href="{% url 'music:update' my_playlist.id %}" class="btn btn-lg btn-outline-light update-playlist-btn">Update this playlist...</a>
+        </div>
+    </div>
+    {% endif %}
 </div>
 {% endblock content %}

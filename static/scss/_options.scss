@@ -15,13 +15,14 @@ $highlightColor: #ccc !default;
 $activeColor: #2098D1 !default;
 $shadowColor: rgba(0, 0, 0, .6) !default;
 
-$color-darkgrey: "#2f323a";
-$color-red: "#a4303f";
-$color-yolkyellow: "#e8a12f";
-$color-lightwhite: "#ddf8e8";
+$color-darkgrey: #2f323a;
+$color-red: #a4303f;
+$color-yolkyellow: #e8a12f;
+$color-lightwhite: #ddf8e8;
 $color-lightwhite-o: rgba(255, 255, 255, 0.5);
-$color-lightsilver: "#87919e";
-$ovum-primary-gradient: linear-gradient(to right, #{$color-yolkyellow}, #{$color-red});
+$color-lightsilver: #87919e;
+$color-spotify: #1db954;
+$ovum-primary-gradient: linear-gradient(to right, $color-yolkyellow, $color-red);
 
 // Speech bubbles options
 $tipWidth: 10px !default;  //the width of the speech bubble tip

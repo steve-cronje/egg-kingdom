@@ -13,7 +13,7 @@
 		left: 0;
 		right: 0;
 		bottom: 0;
-		background: $activeColor;
+		background: $color-spotify;
 		@include prefixed(transform, scaleY(0));
 		@include prefixed(transform-origin, 50% 0);
 		@include prefixed(transition-property, transform);
@@ -24,7 +24,7 @@
 	&:hover,
 	&:focus,
 	&:active {
-		color: white;
+		color: $color-lightwhite;
 
 		&:before {
 			@include prefixed(transform, scaleY(1));

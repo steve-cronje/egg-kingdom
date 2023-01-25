@@ -27,22 +27,22 @@
                         <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">Navigare Ovum</h5>
                     </div>
                     <div class="offcanvas-body text-center">
-                        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                        <ul class="navbar-nav justify-content-end flex-grow-1 sidebar-navbar">
                             <li class="nav-item">
-                                <a class="nav-link hvr-icon-wobble-vertical hvr-underline-from-center" href="{% url 'home:ovum' user.pk %}"><i class="fa-solid fa-user hvr-icon"></i>&nbsp;&nbsp;&nbsp;&nbsp;Profile&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa-solid fa-egg hvr-icon"></i></a>
+                                <a class="nav-link hvr-icon-wobble-vertical hvr-shutter-out-horizontal" href="{% url 'home:ovum' user.pk %}"><i class="fa-solid fa-user hvr-icon"></i>&nbsp;&nbsp;&nbsp;&nbsp;Profile&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa-solid fa-egg hvr-icon"></i></a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link hvr-icon-wobble-vertical hvr-underline-from-center" href="{% url 'games:list' %}"><i class="fa-solid fa-gamepad hvr-icon"></i>&nbsp;&nbsp;&nbsp;&nbsp;Games Shelf&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa-solid fa-egg hvr-icon"></i></a>
+                                <a class="nav-link hvr-icon-wobble-vertical hvr-shutter-out-horizontal" href="{% url 'games:list' %}"><i class="fa-solid fa-gamepad hvr-icon"></i>&nbsp;&nbsp;&nbsp;&nbsp;Games Shelf&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa-solid fa-egg hvr-icon"></i></a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link hvr-icon-wobble-vertical hvr-underline-from-center" href="{% url 'music:playlists' %}"><i class="fa-solid fa-music hvr-icon"></i>&nbsp;&nbsp;&nbsp;&nbsp;Music Shelf&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa-solid fa-egg hvr-icon"></i></a>
+                                <a class="nav-link hvr-icon-wobble-vertical hvr-shutter-out-horizontal" href="{% url 'music:playlists' %}"><i class="fa-solid fa-music hvr-icon"></i>&nbsp;&nbsp;&nbsp;&nbsp;Music Shelf&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa-solid fa-egg hvr-icon"></i></a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link hvr-icon-wobble-vertical hvr-underline-from-center" href="{% url 'volumes:volumes' %}"><i class="fa-solid fa-folder hvr-icon"></i>&nbsp;&nbsp;&nbsp;&nbsp;Volumes&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa-solid fa-egg hvr-icon"></i></a>
+                                <a class="nav-link hvr-icon-wobble-vertical hvr-shutter-out-horizontal" href="{% url 'volumes:volumes' %}"><i class="fa-solid fa-folder hvr-icon"></i>&nbsp;&nbsp;&nbsp;&nbsp;Volumes&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa-solid fa-egg hvr-icon"></i></a>
                             </li>
                             {% if user.is_superuser %}
                             <li class="nav-item">
-                                <a class="nav-link hvr-icon-wobble-vertical hvr-underline-from-center" href="{% url 'admin:index' %}"><i class="fa-solid fa-crown hvr-icon"></i>&nbsp;&nbsp;&nbsp;&nbsp;Admin&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa-solid fa-egg hvr-icon"></i></a>
+                                <a class="nav-link hvr-icon-wobble-vertical hvr-shutter-out-horizontal" href="{% url 'admin:index' %}"><i class="fa-solid fa-crown hvr-icon"></i>&nbsp;&nbsp;&nbsp;&nbsp;Admin&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa-solid fa-egg hvr-icon"></i></a>
                             </li>
                             {% endif %}
                         </ul>

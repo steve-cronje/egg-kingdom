@@ -2,7 +2,7 @@
 @mixin shutter-out-horizontal {
 	@include hacks();
 	position: relative;
-	background: $primaryColor;
+	background: none;
 	@include prefixed(transition-property, color);
 	@include prefixed(transition-duration, $mediumDuration);
 
@@ -14,7 +14,7 @@
 		bottom: 0;
 		left: 0;
 		right: 0;
-		background: $activeColor;
+		background: $color-lightwhite;
 		@include prefixed(transform, scaleX(0));
 		@include prefixed(transform-origin, 50%);
 		@include prefixed(transition-property, transform);
@@ -25,7 +25,7 @@
 	&:hover,
 	&:focus,
 	&:active {
-		color: white;
+		color: $color-darkgrey;
 
 		&:before {
 			@include prefixed(transform, scaleX(1));
