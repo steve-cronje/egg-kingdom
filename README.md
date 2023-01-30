@@ -1,4 +1,6 @@
 # egg-kingdom
-Personal site
+Personal site i'm making as a hobby
+developed / developing with django + html/scss
 
-just a personal blogging site revolving around eggs mostly.
+just a site revolving around eggs mostly.
+
