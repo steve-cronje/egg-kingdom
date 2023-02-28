@@ -363,3 +363,13 @@ footer {
     box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.699);
     z-index: 9999;
 }
+
+.games-shelf-link {
+    width: 99%;
+    // border-bottom: $color-lightwhite;
+    border-radius: 0;
+    border: 2px solid $color-lightwhite;
+    border-right: none;
+    border-left: none;
+    color: $color-lightwhite;
+}
